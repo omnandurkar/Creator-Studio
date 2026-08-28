@@ -1,0 +1,36 @@
+{
+  "zine": {
+    "issue": "Index no. 01",
+    "title": "The Afterimage Reader",
+    "description": "A small screen-first issue that lets a release, a letter, a long reading, and a note sit together for a slower return.",
+    "entries": [
+      { "label": "a release", "title": "Postcard for 2:17 AM", "route": "/music/postcard-for-217-am" },
+      { "label": "a letter", "title": "The Sound of Dusk", "route": "/shayari/the-sound-of-dusk" },
+      { "label": "a reading", "title": "How to Hold a Quiet Hour", "route": "/writings/how-to-hold-a-quiet-hour" },
+      { "label": "a small note", "title": "Pinned, for later", "route": "/notes" }
+    ]
+  },
+  "wallpapers": [
+    { "id": "coral-star", "title": "Afterimage Coral", "subtitle": "a starburst for the lock screen", "background": "#ff6e6c", "foreground": "#232630", "mark": "✳" },
+    { "id": "blue-room", "title": "Blue Room Lines", "subtitle": "a slow frequency for the desktop", "background": "#bfe0f2", "foreground": "#232630", "mark": "◉" },
+    { "id": "green-margin", "title": "Margin Green", "subtitle": "a blank edge for the phone", "background": "#a6d2c0", "foreground": "#245a45", "mark": "✎" }
+  ],
+  "glossary": [
+    { "term": "afterimage", "definition": "The feeling, color, or line that remains after a song, page, or screening ends.", "room": "archive language" },
+    { "term": "first proof", "definition": "A version allowed to be visibly unfinished: a sound, thought, or page before it is corrected into silence.", "room": "process language" },
+    { "term": "open folder", "definition": "A place reserved for work that deserves time before it receives a final title or conclusion.", "room": "archive language" },
+    { "term": "margin note", "definition": "A small observation that may not be the main work, but changes how the main work is read.", "room": "reading language" }
+  ],
+  "processFrames": [
+    { "id": "frame-01", "stage": "01 / collect", "title": "The first loose page", "description": "A space for a lyric fragment, an image, or an early line before the work has found its shape.", "color": "rose" },
+    { "id": "frame-02", "stage": "02 / return", "title": "The sound beside it", "description": "A space for a voice-note still, a rehearsal image, or the object that kept a piece moving.", "color": "blue" },
+    { "id": "frame-03", "stage": "03 / keep", "title": "What stayed unfinished", "description": "A space for the alternate title, crossed-out line, or future question that belongs beside the finished work.", "color": "lemon" }
+  ],
+  "toolkit": [
+    { "title": "A three-word weather note", "description": "Before making, name the room in three ordinary words. Let those words guide the first ten minutes." },
+    { "title": "One object, one page", "description": "Choose the nearest object and write only what it remembers. Do not explain the whole day." },
+    { "title": "The return question", "description": "At the end of a session, leave one honest question that makes it easier to come back tomorrow." }
+  ],
+  "sessions": [],
+  "audioPostcard": { "songId": "song-layout-001", "eyebrow": "one-minute audio postcard", "title": "A note from 2:17 AM", "description": "A short instrumental fragment held here as a listening-room postcard, for the kind of return that does not need an explanation." }
+}

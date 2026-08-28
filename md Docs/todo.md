@@ -1,0 +1,31 @@
+# Creator Studio Build Checklist
+
+- [x] Add clearly labelled illustrative, replaceable content blocks to the remaining non-review pages so layouts feel lived-in without being represented as Om’s published work.
+- [x] Add a clearly labelled illustrative audio sketch and one complete sample release to demonstrate artwork, player controls, tracks, and outbound listening links.
+- [x] Populate the existing Music, Shayari, Writings, and Notes presentation paths with clearly labelled peak-experience sample content.
+- [x] Keep all personal film reviews, favourites, reactions, and ratings empty until Om supplies them; do not fabricate or seed those entries.
+- [x] Add visible personal-image slots to Home, Music, Shayari, Writings, Notes, Cinephile, and About for Om’s later uploads.
+- [x] Complete the Shayari page and its JSON editing structure for the next review gate.
+- [x] Create a practical content-editing guide and automated JSON validation command for handover.
+- [x] Create and maintain a 50-idea Creator Studio Feature Roadmap with priority tiers, visitor use flows, content-editing guidance, and implementation requirements.
+- [x] Document a future small-shop path, including the decision required before connecting a commerce provider.
+- [x] Confirm whether Studio Editions will use an existing Shopify store or a new development store before commerce setup. — Removed from scope; Creator Studio will not include a shop or commerce integration.
+- [x] Defer third-party email-provider selection until Om explicitly chooses to send archive letters; the implemented on-site consented interest form stores interest without external delivery.
+- [x] Complete the last non-commerce roadmap capability: a practical public press-kit drawer with only verified studio details and no fabricated assets.
+- [x] Complete the non-commerce 50-feature roadmap audit and mark the program finished only after the press-kit capability and documentation are verified.
+- [x] Remove Studio Editions, payments, inventory, checkout, and product-purchase work from the active roadmap and preserve a non-commerce archive focus.
+- [x] Implement expanded listening-room features: multi-release shelf, mood filters and constellation, album foldout tracks, global release-aware player, lyrics margin, story drawer, versions cabinet, credits, session timeline, and nearby-release links.
+- [x] Implement advanced Shayari, Writings, and Notes features: language views, letter series, reading mixes, share controls, long-read table of contents, footnotes, printable pages, notebook tag map, daily note selection, and note spotlight controls.
+- [x] Implement Cinephile and Studio Desk features: watch-diary sort and motifs, scene index, neutral unfiled watchlist, soundtrack crossfade, interactive object-led archive desk, and current studio weather board.
+- [x] Implement accessibility and archive infrastructure: persistent reader preferences, reduced motion, calm contrast, larger reading type, site-wide search, archive calendar, factual changelog, and browser offline cache shell.
+- [x] Implement creator tools: database-backed private drafts, authenticated creator workspace, public consent-based guestbook submission, and owner-only moderation queue with no seeded visitor content.
+- [x] Implement archive letters without external delivery: consent-based on-site interest form, private creator list, and explicit no-delivery behavior.
+- [x] Implement the Studio Artifacts room: zine reader, wallpaper cabinet, glossary, process gallery, creative toolkit, zine print action, audio postcard, and commission ledger.
+- [x] Implement a JSON-driven listening-sessions calendar with dated upcoming and past states for Studio Artifacts.
+- [x] Expand printable artifact selections beyond the reader’s single print action with dedicated process-card and toolkit-prompt print sheets.
+- [x] Implement remaining archive cross-link, double-feature, share-card, and private-preview refinements: influence map, frame-of-the-month state, double-feature state, browser-generated share cards, revocable draft links, and private release checklist.
+- [x] Recast public archive copy in room-native language; remove visible scaffold terms and obsolete published illustrative/template markers without fabricating film opinions or visitor content.
+- [x] Verify TypeScript, unit tests, content validation, production build, and desktop/mobile public-room renders after the final archive clean-up.
+- [x] Add a respectful ADHD-and-many-interests archive room with balanced educational framing, JSON-managed personal prompts, a moving flower-and-wind motif, reduced-motion support, navigation, documentation, and verification.
+- [x] Ensure the optional Mind Garden breeze button releases visible vector wind, gives nearby elements a gentle temporary sway, and returns the room to true rest with reduced-motion support.
+- [x] Transform Om’s supplied portrait into a likeness-preserving watercolor/vector archive asset, store it through the project media workflow, integrate it as an atmospheric background layer, and verify the resulting page.

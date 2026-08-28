@@ -1,0 +1,192 @@
+/**
+ * Pastel Afterimage Archive visual reminder: Home is the Sunset Soundcheck room.
+ * Use peach paper, coral stamps, butter highlights, waveform vectors, and an
+ * off-centre editorial composition that makes the creator’s content the artwork.
+ */
+import { ArrowDownRight, ArrowUpRight, CirclePlay, Disc3, Headphones, MoveRight, Sparkles } from "lucide-react";
+import { useState } from "react";
+import { Link } from "wouter";
+import SiteShell from "@/components/SiteShell";
+import { homeContent, studioProfile } from "@/lib/content";
+import { toast } from "sonner";
+
+const heroLines = [
+  studioProfile.shortTagline,
+  "Half-finished melodies, full-hearted lines.",
+  "A little archive for the things that stayed.",
+];
+
+const archiveRooms = [
+  { no: "01", title: "Music", copy: "songs / albums / fragments", className: "archive-card--music" },
+  { no: "02", title: "Shayari", copy: "lines that linger", className: "archive-card--shayari" },
+  { no: "03", title: "Notes", copy: "small thoughts, pinned", className: "archive-card--notes" },
+  { no: "04", title: "Cinephile", copy: "frames that stayed", className: "archive-card--cinephile" },
+];
+
+function SoundWave() {
+  return (
+    <svg aria-hidden="true" className="sound-wave" fill="none" viewBox="0 0 430 102">
+      <path d="M1 49C30 49 29 10 59 10s28 81 58 81 30-64 59-64c30 0 27 49 57 49s30-70 60-70 28 44 57 44 31-31 79-31" stroke="currentColor" strokeWidth="4" />
+      <path d="M1 58c29 0 29 23 58 23s30-67 58-67 30 53 59 53 28-29 57-29 30 51 60 51 29-29 57-29 32 14 79 14" opacity=".52" stroke="currentColor" strokeDasharray="3 9" strokeWidth="3" />
+    </svg>
+  );
+}
+
+function SunBurst() {
+  return (
+    <svg aria-hidden="true" className="sun-burst" viewBox="0 0 130 130">
+      <g fill="currentColor">
+        <path d="M61 0h8l4 36-8 5zM61 130h8l4-36-8-5zM0 61v8l36 4 5-8zM130 61v8l-36 4-5-8zM17 13l6-5 24 27-4 8zM113 117l-6 5-24-27 4-8zM13 113l-5-6 27-24 8 4zM117 17l5 6-27 24-8-4z" />
+        <circle cx="65" cy="65" r="27" />
+      </g>
+    </svg>
+  );
+}
+
+export default function Home() {
+  const [lineIndex, setLineIndex] = useState(0);
+
+  const revealNextLine = () => {
+    setLineIndex((current) => (current + 1) % heroLines.length);
+    toast("A new line from the studio.", { description: "The record label keeps a few thoughts in rotation." });
+  };
+
+  const previewUnavailable = () => {
+    window.dispatchEvent(new Event("creator-studio:play-demo"));
+    toast("Now playing: Postcard for 2:17 AM", {
+      description: "Studio sketch no. 01 — kept in the archive’s late-night drawer.",
+    });
+  };
+
+  return (
+    <SiteShell pageTheme="studio">
+      <section className="studio-hero">
+        <div className="studio-hero__paper-noise" aria-hidden="true" />
+        <div className="studio-hero__content">
+          <p className="studio-hero__catalogue"><span /> Vol. 01 — the listening room</p>
+          <h1>
+            <span className="studio-hero__pretitle">Hello, I’m</span>
+            {studioProfile.artistName}
+            <em>and I collect the things that become songs.</em>
+          </h1>
+          <p className="studio-hero__line">{heroLines[lineIndex]}</p>
+          <div className="studio-hero__actions">
+            <Link className="hero-listen" href="/music">
+              <CirclePlay aria-hidden="true" size={18} strokeWidth={2.15} />
+              Enter the music room
+            </Link>
+            <Link className="hero-note-link" href="/writings">
+              Read something small <ArrowDownRight aria-hidden="true" size={18} />
+            </Link>
+          </div>
+        </div>
+
+        <div className="studio-hero__art" aria-label="A watercolor portrait of Om woven into a record and notebook studio collage">
+          <div className="studio-hero__artwork studio-hero__collage-art">
+            <img alt="" aria-hidden="true" className="hero-collage__portrait" src={studioProfile.portraitImage} />
+            <div className="hero-collage__paper hero-collage__paper--blue" />
+            <div className="hero-collage__paper hero-collage__paper--cream">
+              <span>side one</span><i /><i /><i /><i />
+            </div>
+            <div className="hero-collage__record"><div /></div>
+            <div className="hero-collage__sun"><SunBurst /></div>
+            <div className="hero-collage__scribble">everything becomes<br />a song eventually</div>
+          </div>
+          <div aria-hidden="true" className="studio-hero__art-border" />
+          <div aria-hidden="true" className="hero-orbit hero-orbit--large" />
+          <div aria-hidden="true" className="hero-orbit hero-orbit--small" />
+          <div aria-hidden="true" className="hero-dots" />
+          <button
+            aria-label="Reveal another studio line"
+            className="hero-record-label"
+            onClick={revealNextLine}
+            title="Spin for another thought"
+            type="button"
+          >
+            <span>spin<br />for<br />a line</span>
+            <SunBurst />
+          </button>
+          <p className="hero-art-caption">a quiet room, a loud feeling <span>✳</span></p>
+        </div>
+
+        <div className="studio-hero__wave"><SoundWave /></div>
+        <p className="studio-hero__corner-note">click the record label<br />for a fresh thought</p>
+      </section>
+
+      <section className="now-playing-section" aria-labelledby="now-playing-title">
+        <div className="now-playing-section__label-wrap">
+          <p className="section-kicker"><span className="section-kicker__disc" /> latest from the studio</p>
+          <h2 id="now-playing-title">A new sound<br /><em>is finding its way here.</em></h2>
+        </div>
+
+        <article className="release-feature">
+          <div className="release-feature__art release-feature__art--vector">
+            <div className="release-vector__disc"><div /></div>
+            <div className="release-vector__tape" />
+            <div className="release-vector__curves" aria-hidden="true">∿<br />∿</div>
+            <span className="release-vector__line release-vector__line--one" />
+            <span className="release-vector__line release-vector__line--two" />
+            <div className="release-feature__art-stamp">side A</div>
+          </div>
+          <div className="release-feature__body">
+            <p className="release-feature__eyebrow">{homeContent.featuredRelease.kicker}</p>
+            <h3>{homeContent.featuredRelease.title}</h3>
+            <p className="release-feature__format">{homeContent.featuredRelease.format}</p>
+            <p className="release-feature__description">{homeContent.featuredRelease.description}</p>
+            <div className="release-feature__player">
+              <button aria-label="Play illustrative audio sketch" className="player-play" onClick={previewUnavailable} type="button"><CirclePlay size={24} fill="currentColor" /></button>
+              <div className="player-track"><span className="player-track__name">{homeContent.previewSong.title}</span><span>{homeContent.previewSong.duration}</span></div>
+              <div aria-hidden="true" className="player-wave"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
+            </div>
+            <Link className="release-feature__link" href="/music">open release page <ArrowUpRight aria-hidden="true" size={16} /></Link>
+          </div>
+        </article>
+      </section>
+
+      <section className="studio-note-section">
+        <div className="studio-note-section__label">
+          <span className="studio-note-section__pin" />
+          from the notebook
+        </div>
+        <blockquote>
+          <span>“</span>{homeContent.featuredNote.text}<span>”</span>
+        </blockquote>
+        <p>{homeContent.featuredNote.label}</p>
+        <div aria-hidden="true" className="studio-note-section__scribble">keep this one.</div>
+      </section>
+
+      <section className="archive-section" aria-labelledby="archive-title">
+        <div className="archive-section__heading">
+          <p className="section-kicker">follow the paper trail</p>
+          <h2 id="archive-title">Every piece has<br />its own <em>room.</em></h2>
+          <p>The archive changes shape depending on what you’re looking for—sound, a line, a frame, or an unfinished thought.</p>
+        </div>
+        <div className="archive-card-grid">
+          {archiveRooms.map((room) => (
+            <Link className={`archive-card ${room.className}`} href={`/${room.title.toLowerCase()}`} key={room.title}>
+              <span className="archive-card__number">{room.no}</span>
+              <span className="archive-card__icon" aria-hidden="true">{room.title === "Music" ? "≈" : room.title === "Shayari" ? "☾" : room.title === "Notes" ? "✎" : "▣"}</span>
+              <span className="archive-card__body"><strong>{room.title}</strong><small>{room.copy}</small></span>
+              <MoveRight aria-hidden="true" className="archive-card__arrow" size={20} />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="studio-collage" aria-label="Creative practice overview">
+        <div className="studio-collage__objects" aria-hidden="true">
+          <div className="collage-disc"><Disc3 size={85} /></div>
+          <div className="collage-stars">✳ ✳<br />✳</div>
+          <div className="collage-tape" />
+        </div>
+        <div className="studio-collage__copy">
+          <p className="section-kicker"><Sparkles size={14} /> currently becoming</p>
+          <h2>{studioProfile.currentlyCreating}</h2>
+          <p>New pages will be added to the archive as they find their final shape. In the meantime, there are small things worth keeping.</p>
+          <Link href="/about" className="text-arrow-link">the person behind the pages <ArrowUpRight size={17} /></Link>
+        </div>
+        <div className="studio-collage__side-note"><Headphones size={19} /><span>{studioProfile.availability}</span></div>
+      </section>
+    </SiteShell>
+  );
+}

@@ -1,0 +1,7 @@
+[
+  { "id": "desk-sleeve", "label": "the blue sleeve", "title": "Listening room", "description": "Singles, foldouts, fragments and the first strange take.", "route": "/music", "accent": "blue", "symbol": "◉" },
+  { "id": "desk-letter", "label": "pressed letter", "title": "Shayari", "description": "Small lines, folded letters and room for a second reading.", "route": "/shayari", "accent": "rose", "symbol": "✳" },
+  { "id": "desk-book", "label": "green spine", "title": "Writings", "description": "Longer pages, margins, footnotes and unhurried thoughts.", "route": "/writings", "accent": "green", "symbol": "▤" },
+  { "id": "desk-note", "label": "lemon note", "title": "Notes", "description": "Questions, small sparks and the things that stay brief.", "route": "/notes", "accent": "lemon", "symbol": "✎" },
+  { "id": "desk-ticket", "label": "admit one", "title": "Cinephile", "description": "Screening folders and frames that followed the room home.", "route": "/cinephile", "accent": "teal", "symbol": "▰" }
+]

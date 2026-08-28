@@ -1,0 +1,67 @@
+[
+  {
+    "id": "note-layout-001",
+    "text": "A good melody remembers what the sentence was trying to say.",
+    "label": "a note for the studio wall",
+    "color": "butter",
+    "rotation": -3,
+    "pinStyle": "red-pin",
+    "date": "2026-01-05",
+    "tags": ["music", "process"],
+    "printable": true,
+    "published": true,
+    "featured": true
+  },
+  {
+    "id": "note-layout-002",
+    "text": "Leave enough silence in the frame for the feeling to find you.",
+    "label": "folded into a margin",
+    "color": "lilac",
+    "rotation": 2,
+    "pinStyle": "tape",
+    "date": "2026-01-19",
+    "tags": ["quiet", "film"],
+    "printable": true,
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "note-layout-003",
+    "text": "Some ideas need tea, a walk, and one more unnecessary draft.",
+    "label": "reminder to future me",
+    "color": "peach",
+    "rotation": -1,
+    "pinStyle": "blue-pin",
+    "date": "2026-02-08",
+    "tags": ["process", "slow"],
+    "printable": true,
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "note-layout-004",
+    "text": "What if the chorus begins where the apology ends?",
+    "label": "unfinished lyric prompt",
+    "color": "mint",
+    "rotation": 4,
+    "pinStyle": "tape",
+    "date": "2026-02-28",
+    "tags": ["lyric", "prompt"],
+    "printable": true,
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "note-layout-005",
+    "text": "Keep the first strange version. It may know something the polished one forgets.",
+    "label": "studio rule no. 05",
+    "color": "sky",
+    "rotation": -4,
+    "pinStyle": "red-pin",
+    "date": "2026-03-12",
+    "tags": ["making", "memory"],
+    "printable": true,
+    "published": true,
+    "featured": false
+  }
+]

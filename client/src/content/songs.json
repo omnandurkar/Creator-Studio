@@ -1,0 +1,81 @@
+[
+  {
+    "id": "song-layout-001",
+    "slug": "postcard-for-2-17-am",
+    "title": "Postcard for 2:17 AM",
+    "type": "single",
+    "releaseDate": "2026-04-17",
+    "coverImage": "",
+    "audioPreview": "/assets/om-illustrative-audio-sketch.mp3",
+    "duration": "01:00",
+    "description": "A one-minute midnight instrumental: tape-warm electric piano, a small guitar figure, and the feeling of a window left open after the conversation ends.",
+    "mood": ["late-night", "warm", "instrumental"],
+    "links": {},
+    "lyricFragments": ["an open window / a small guitar figure", "the first strange take / kept in the room"],
+    "lyricContext": "This is an instrumental studio sketch, so the margin keeps sound-images rather than lyrics.",
+    "story": "A first proof built around a tape-warm electric piano, a guitar figure, and the feeling of the conversation continuing after the room is quiet.",
+    "storyPlace": "late desk / window open",
+    "credits": [
+      { "role": "sound, arrangement", "name": "Om Nandurkar" },
+      { "role": "first proof", "name": "om // small hours" }
+    ],
+    "versions": [
+      { "id": "postcard-first-proof", "label": "first proof", "description": "The small, warm version that began the room.", "audioPreview": "/assets/om-illustrative-audio-sketch.mp3" },
+      { "id": "postcard-window-mix", "label": "window mix", "description": "A later space reserved for a second arrangement.", "audioPreview": "" }
+    ],
+    "timeline": [
+      { "date": "April 12", "title": "a chord left on the desk", "detail": "The first harmonic loop stayed after a late session." },
+      { "date": "April 15", "title": "guitar enters", "detail": "A small figure gave the sketch a moving edge." },
+      { "date": "April 17", "title": "first pressing", "detail": "The one-minute version was filed in the listening room." }
+    ],
+    "relatedIds": ["album-layout-001"],
+    "published": true,
+    "featured": true
+  },
+  {
+    "id": "song-layout-002",
+    "slug": "soft-morning-rehearsal",
+    "title": "Soft Morning Rehearsal",
+    "type": "demo",
+    "releaseDate": "2026-05-09",
+    "coverImage": "",
+    "audioPreview": "",
+    "duration": "02:13",
+    "description": "An unhurried demo filed beside the kettle: a pulse, a half-sung shape, and one line waiting for its final home.",
+    "mood": ["morning", "soft-focus", "demo"],
+    "links": {},
+    "lyricFragments": ["not all beginnings / need to be loud"],
+    "lyricContext": "A handwritten fragment held beside the rehearsal recording.",
+    "story": "A sketch that is still deciding what kind of morning it belongs to.",
+    "storyPlace": "kitchen table / first light",
+    "credits": [{ "role": "sketch, voice note", "name": "Om Nandurkar" }],
+    "versions": [{ "id": "soft-morning-demo", "label": "room tone", "description": "A future audio preview can sit here.", "audioPreview": "" }],
+    "timeline": [{ "date": "May 09", "title": "first note", "detail": "The idea stayed in the blue room through the first rainy morning." }],
+    "relatedIds": ["album-layout-001"],
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "song-layout-003",
+    "slug": "the-space-between-trains",
+    "title": "The Space Between Trains",
+    "type": "collaboration",
+    "releaseDate": "2026-06-02",
+    "coverImage": "",
+    "audioPreview": "",
+    "duration": "03:04",
+    "description": "A slow-drum thought for two notebooks and the particular silence found on a platform after midnight.",
+    "mood": ["city-night", "moving", "collaboration"],
+    "links": {},
+    "lyricFragments": ["some silences / travel with us"],
+    "lyricContext": "One short fragment held at the edge of the track.",
+    "story": "A sound world kept open for the conversations that can grow beside Om’s work.",
+    "storyPlace": "platform / after midnight",
+    "credits": [{ "role": "open collaborator space", "name": "to be credited with consent" }],
+    "versions": [{ "id": "between-trains-outline", "label": "outline", "description": "A future audio preview can sit here.", "audioPreview": "" }],
+    "timeline": [{ "date": "June 02", "title": "a place held", "detail": "The archive keeps a small space for a future collaboration." }],
+    "relatedIds": ["album-layout-001"],
+    "published": true,
+    "featured": false
+  }
+]

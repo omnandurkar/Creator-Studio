@@ -1,0 +1,14 @@
+{
+  "creator": "Om Nandurkar",
+  "role": "Music creator and writer",
+  "archiveName": "Creator Studio",
+  "shortBio": "Om Nandurkar keeps songs, shayaris, writings, notes, and cinema thoughts in a living personal archive.",
+  "focus": ["music", "shayari", "writings", "cinema notes"],
+  "pressImages": [],
+  "selectedRoutes": [
+    { "label": "Music room", "route": "/music" },
+    { "label": "Shayari letters", "route": "/shayari" },
+    { "label": "Writing journal", "route": "/writings" },
+    { "label": "Cinephile diary", "route": "/cinephile" }
+  ]
+}

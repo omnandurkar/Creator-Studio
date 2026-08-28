@@ -1,0 +1,18 @@
+{
+  "featuredRelease": {
+    "kicker": "Studio sketch no. 01 · archive draft",
+    "title": "Postcard for 2:17 AM",
+    "format": "Instrumental sketch · 2026",
+    "description": "A warm late-night instrumental kept in the archive’s first listening room: a small light left on at 2:17 AM.",
+    "coverImage": "/assets/home-sunset-soundcheck.svg"
+  },
+  "previewSong": {
+    "title": "Postcard for 2:17 AM",
+    "duration": "01:00",
+    "status": "Studio sketch no. 01 · one minute after midnight"
+  },
+  "featuredNote": {
+    "text": "The unfinished version is still part of the song.",
+    "label": "Studio note · kept in the margin"
+  }
+}

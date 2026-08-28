@@ -1,0 +1,5 @@
+[
+  { "id": "change-2026-08-01", "date": "2026-08-01", "title": "The archive opens its desk", "detail": "The object-led Studio Desk and current studio weather board were added to the archive.", "rooms": ["studio desk", "home"] },
+  { "id": "change-2026-08-02", "date": "2026-08-02", "title": "Listening room filed deeper", "detail": "The music shelf gained a foldout EP path, release constellation, liner notes, and session timelines.", "rooms": ["music"] },
+  { "id": "change-2026-08-03", "date": "2026-08-03", "title": "Margins become navigable", "detail": "Reading views now include language choices, series links, contents, footnotes, note tags, and print-ready pages.", "rooms": ["shayari", "writings", "notes"] }
+]

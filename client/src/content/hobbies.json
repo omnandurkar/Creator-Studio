@@ -1,0 +1,26 @@
+[
+  {
+    "id": "hobby-template-001",
+    "title": "A thing I make time for",
+    "description": "An open column for a small obsession, ritual, instrument, pastime, sport, book habit, or anything that quietly feeds the work.",
+    "icon": "◎",
+    "color": "peach",
+    "published": true
+  },
+  {
+    "id": "hobby-template-002",
+    "title": "A world that feeds the work",
+    "description": "A space for a film, a street, a sound, a place, a conversation, or a practice that keeps the ideas moving.",
+    "icon": "✳",
+    "color": "butter",
+    "published": true
+  },
+  {
+    "id": "hobby-template-003",
+    "title": "Something outside the studio",
+    "description": "A pocket for the off-stage part of a life that is still becoming known.",
+    "icon": "↗",
+    "color": "sky",
+    "published": true
+  }
+]

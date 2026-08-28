@@ -1,0 +1,19 @@
+{
+  "frameOfTheMonth": {
+    "filed": false,
+    "title": "No frame is filed this month.",
+    "caption": "When Om chooses a rights-cleared still, poster, or original cinema image, it can live here with a real line in its margin.",
+    "image": ""
+  },
+  "doubleFeatures": [],
+  "connections": [
+    { "id": "connection-01", "from": "Postcard for 2:17 AM", "fromRoom": "music", "to": "The Sound of Dusk", "toRoom": "shayari", "thread": "night / window / held breath" },
+    { "id": "connection-02", "from": "How to Hold a Quiet Hour", "fromRoom": "writings", "to": "Paper Moon", "toRoom": "shayari", "thread": "reading slowly / unfinished" },
+    { "id": "connection-03", "from": "Studio rule no. 05", "fromRoom": "notes", "to": "The Afterimage Reader", "toRoom": "artifacts", "thread": "return / first proof" }
+  ],
+  "shareCards": [
+    { "id": "share-01", "room": "music", "title": "Postcard for 2:17 AM", "line": "A one-minute midnight instrumental, held here as an audio postcard." },
+    { "id": "share-02", "room": "shayari", "title": "The Sound of Dusk", "line": "When the evening folded itself into the window, even the quiet sounded like it had somewhere to go." },
+    { "id": "share-03", "room": "writings", "title": "How to Hold a Quiet Hour", "line": "A reading about letting the unfinished version keep its own small room." }
+  ]
+}

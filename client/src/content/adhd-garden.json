@@ -1,0 +1,54 @@
+{
+  "eyebrow": "garden notes / many interests",
+  "title": "This is what a constructive ADHD mind can make.",
+  "intro": "Not a superpower. Not a failure of will. Just a mind that may move quickly between sparks—and, with the right support and structure, can turn many small fascinations into a living body of work.",
+  "disclaimer": "This is a creative reflection, not a diagnosis or treatment guide. ADHD looks different from person to person; a qualified clinician can help when attention, restlessness, impulsivity, or overwhelm are affecting daily life.",
+  "definition": "ADHD is a neurodevelopmental condition involving persistent patterns of inattention, hyperactivity, and/or impulsivity. It can affect daily functioning, but no two people’s experience—or support needs—are identical.",
+  "tensions": [
+    {
+      "label": "when the wind is too loud",
+      "title": "Many ideas can become too many open doors.",
+      "copy": "Distraction, time blindness, unfinished tasks, restlessness, and impulsive decisions can make work, study, relationships, and basic routines more tiring than they look from outside. The goal is not to shame the wind; it is to give it a path."
+    },
+    {
+      "label": "when the wind has a shape",
+      "title": "Curiosity can become a creative ecology.",
+      "copy": "A wide field of interests can feed unusual connections: a film changes a lyric, a walk changes a rhythm, a side project teaches a new craft. ADHD does not guarantee creativity or achievement, but a person’s interests can become useful material when they are supported, protected, and allowed to cross-pollinate."
+    }
+  ],
+  "practices": [
+    {
+      "number": "01",
+      "title": "Catch the spark outside your head",
+      "copy": "Keep one low-friction capture place for ideas: a voice note, one notebook page, or a single list. Capture first; decide later."
+    },
+    {
+      "number": "02",
+      "title": "Shrink the next visible step",
+      "copy": "Instead of promising to finish the whole thing, name the smallest physical beginning: open the file, record eight bars, write one sentence, send one message."
+    },
+    {
+      "number": "03",
+      "title": "Let interests travel together",
+      "copy": "Use a gentle three-lane week: one main commitment, one curious side path, and one rest or reset practice. A varied mind does not have to become a scattered one."
+    },
+    {
+      "number": "04",
+      "title": "Build support into the frame",
+      "copy": "Timers, visual lists, written instructions, accountability, quiet workspaces, treatment, and workplace or study adjustments can all be legitimate forms of support."
+    }
+  ],
+  "interestPetals": ["songs", "shayari", "long reads", "film notes", "small drawings", "walks", "sound scraps", "new questions"],
+  "closingTitle": "The aim is not to become less yourself.",
+  "closingCopy": "It is to make the work visible, reduce the friction around it, ask for the right support, and give every interest a small place to land. A garden does not need every seed to bloom at once.",
+  "sources": [
+    {
+      "label": "NIMH: Attention-Deficit/Hyperactivity Disorder—What You Need to Know",
+      "url": "https://www.nimh.nih.gov/health/publications/attention-deficit-hyperactivity-disorder-what-you-need-to-know"
+    },
+    {
+      "label": "NHS: ADHD in adults",
+      "url": "https://www.nhs.uk/conditions/adhd-adults/"
+    }
+  ]
+}

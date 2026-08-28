@@ -1,0 +1,80 @@
+[
+  {
+    "id": "writing-layout-001",
+    "slug": "how-to-hold-a-quiet-hour",
+    "title": "How to Hold a Quiet Hour",
+    "category": "Reflection",
+    "date": "2026-01-13",
+    "excerpt": "A small essay about finding a workable rhythm in an overfull day.",
+    "body": [
+      "A quiet hour does not always arrive quietly. Sometimes it hides between two messages, behind the sound of water boiling, or in the ten seconds before a song begins.",
+      "A longer piece can hold a reflection, a poem, a memory, an album note, or a story from the road.",
+      "The important part is that the page gives your words enough air. Nothing needs to rush them."
+    ],
+    "sections": [
+      { "heading": "Make room for it", "paragraphs": ["A quiet hour does not always arrive quietly. Sometimes it hides between two messages, behind the sound of water boiling, or in the ten seconds before a song begins."] },
+      { "heading": "Keep the edges loose", "paragraphs": ["A longer piece can hold a reflection, a poem, a memory, an album note, or a story from the road.", "The important part is that the page gives your words enough air. Nothing needs to rush them."] }
+    ],
+    "footnotes": [
+      { "mark": "01", "text": "A margin can hold the detail that does not need to interrupt the main thought." },
+      { "mark": "02", "text": "Use footnotes for references, music cues, private process notes, or small remembered objects." }
+    ],
+    "readingTrackId": "song-layout-001",
+    "shareable": true,
+    "printable": true,
+    "tags": ["process", "quiet", "ritual"],
+    "coverImage": "",
+    "published": true,
+    "featured": true
+  },
+  {
+    "id": "writing-layout-002",
+    "slug": "the-weather-inside-a-song",
+    "title": "The Weather Inside a Song",
+    "category": "Music note",
+    "date": "2026-02-04",
+    "excerpt": "Thoughts, references, and weather held behind a track.",
+    "body": [
+      "Every song has a weather system before it has a melody. It begins as a pressure change: a remembered street, a sentence that will not leave, a particular shade of afternoon.",
+      "An unfinished thought can still make a listener feel invited in.",
+      "Leave the edges loose. Let the reader discover their own sky inside the song."
+    ],
+    "sections": [
+      { "heading": "Pressure change", "paragraphs": ["Every song has a weather system before it has a melody. It begins as a pressure change: a remembered street, a sentence that will not leave, a particular shade of afternoon."] },
+      { "heading": "Leave a window", "paragraphs": ["An unfinished thought can still make a listener feel invited in.", "Leave the edges loose. Let the reader discover their own sky inside the song."] }
+    ],
+    "footnotes": [{ "mark": "01", "text": "A writing can link to a song without needing to explain the connection in full." }],
+    "readingTrackId": "song-layout-001",
+    "shareable": true,
+    "printable": true,
+    "tags": ["music", "process", "atmosphere"],
+    "coverImage": "",
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "writing-layout-003",
+    "slug": "notes-from-the-long-way-home",
+    "title": "Notes From the Long Way Home",
+    "category": "Journal",
+    "date": "2026-03-01",
+    "excerpt": "A journal note about a personal route and a found memory.",
+    "body": [
+      "The longer way home is not always a detour. Sometimes it is the route that lets the day finish speaking.",
+      "A personal note, photograph, or sketch can sit beside the page as a small witness to the day.",
+      "An honest detail deserves to be held with a little tenderness."
+    ],
+    "sections": [
+      { "heading": "Take the longer way", "paragraphs": ["The longer way home is not always a detour. Sometimes it is the route that lets the day finish speaking."] },
+      { "heading": "Let it stay personal", "paragraphs": ["A personal note, photograph, or sketch can sit beside the page as a small witness to the day.", "An honest detail deserves to be held with a little tenderness."] }
+    ],
+    "footnotes": [{ "mark": "01", "text": "A photograph, ticket, drawing, or place name can be kept here as a small witness to the piece." }],
+    "readingTrackId": "song-layout-001",
+    "shareable": true,
+    "printable": true,
+    "tags": ["journal", "memory", "road"],
+    "coverImage": "",
+    "published": true,
+    "featured": false
+  }
+]

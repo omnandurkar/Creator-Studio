@@ -1,0 +1,16 @@
+[
+  {
+    "id": "watchlist-template-001",
+    "title": "A future screening",
+    "format": "feature / to be filed",
+    "reason": "A space for the title that arrives with a recommendation, a question, or a quiet insistence.",
+    "published": true
+  },
+  {
+    "id": "watchlist-template-002",
+    "title": "The next late showing",
+    "format": "screening / to be filed",
+    "reason": "A ticket stub held open for something not watched, rated, or reviewed yet.",
+    "published": true
+  }
+]

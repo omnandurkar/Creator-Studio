@@ -1,0 +1,25 @@
+[
+  {
+    "id": "album-layout-001",
+    "slug": "blue-room-notes",
+    "title": "Blue Room Notes",
+    "type": "ep",
+    "releaseDate": "2026-06-12",
+    "coverImage": "",
+    "duration": "06:17",
+    "description": "A small foldout EP: three tracks, three times of day, one blue room.",
+    "mood": ["blue-room", "between-hours", "sketchbook"],
+    "links": {},
+    "trackIds": ["song-layout-001", "song-layout-002", "song-layout-003"],
+    "story": "Three small hours held together as a foldout listening room.",
+    "storyPlace": "the blue room / volume 02",
+    "credits": [{ "role": "concept, sequence", "name": "om // blue room" }],
+    "timeline": [
+      { "date": "April–June", "title": "three small rooms", "detail": "Each track holds a different hour in the foldout." },
+      { "date": "June 12", "title": "foldout filed", "detail": "The three cards became a single album-shaped archive object." }
+    ],
+    "relatedIds": ["song-layout-001", "song-layout-002", "song-layout-003"],
+    "published": true,
+    "featured": true
+  }
+]
