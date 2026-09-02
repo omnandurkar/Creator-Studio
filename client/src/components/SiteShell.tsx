@@ -10,7 +10,7 @@ import SiteHeader from "./SiteHeader";
 
 type SiteShellProps = {
   children: ReactNode;
-  pageTheme: "studio" | "music" | "shayari" | "writings" | "notes" | "cinephile" | "about" | "contact" | "garden";
+  pageTheme: "studio" | "music" | "shayari" | "writings" | "notes" | "cinephile" | "about" | "contact" | "garden" | "books" | "book-deep-night" | "library";
 };
 
 export default function SiteShell({ children, pageTheme }: SiteShellProps) {
@@ -21,7 +21,6 @@ export default function SiteShell({ children, pageTheme }: SiteShellProps) {
       <SiteHeader />
       <main>{children}</main>
       <SiteFooter />
-      <MiniPlayer />
     </div>
   );
 }

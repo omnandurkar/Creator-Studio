@@ -3,7 +3,7 @@
  * room—sage and off-white paper, bottle-green ink, ruled margins, bookmark tabs,
  * page clips, and calm long-form space for reflective content.
  */
-import { ArrowDown, ArrowUpRight, Bookmark, BookOpenText, Paperclip, PenLine } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Bookmark, BookOpenText, ChevronDown, ChevronUp, Paperclip, PenLine } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Link } from "wouter";
 import SiteShell from "@/components/SiteShell";
@@ -29,14 +29,20 @@ function WritingCard({ entry, index }: { entry: Writing; index: number }) {
   );
 }
 
+const WRITINGS_LIMIT = 3;
+
 export default function Writings() {
   const categories = ["All", ...Array.from(new Set(publishedWritings.map((entry) => entry.category)))];
   const [activeCategory, setActiveCategory] = useState("All");
   const [isBookmarkOpen, setIsBookmarkOpen] = useState(false);
-  const visibleWritings = useMemo(
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const filteredWritings = useMemo(
     () => activeCategory === "All" ? publishedWritings : publishedWritings.filter((entry) => entry.category === activeCategory),
     [activeCategory],
   );
+
+  const visibleWritings = isExpanded ? filteredWritings : filteredWritings.slice(0, WRITINGS_LIMIT);
   const featured = publishedWritings.find((entry) => entry.featured) ?? publishedWritings[0];
 
   return (
@@ -84,6 +90,17 @@ export default function Writings() {
           {categories.map((category) => <button aria-pressed={activeCategory === category} className={activeCategory === category ? "is-active" : ""} key={category} onClick={() => setActiveCategory(category)} type="button">{category}</button>)}
         </div>
         <div className="writing-card-grid">{visibleWritings.map((entry, index) => <WritingCard entry={entry} index={index} key={entry.id} />)}</div>
+        {filteredWritings.length > WRITINGS_LIMIT && (
+          <div className="section-more-wrapper">
+            <button className="section-more-btn" onClick={() => setIsExpanded((prev) => !prev)} type="button">
+              {isExpanded ? (
+                <>Show Less <ChevronUp size={16} /></>
+              ) : (
+                <>View More Writings ({filteredWritings.length - WRITINGS_LIMIT} more) <ChevronDown size={16} /></>
+              )}
+            </button>
+          </div>
+        )}
       </section>
 
       <section className="writing-invitation">

@@ -15,7 +15,7 @@ export default function About() {
     <SiteShell pageTheme="about">
       <section className="about-hero">
         <div className="about-hero__paper-lines" aria-hidden="true" />
-        <div className="about-hero__copy"><p className="about-hero__kicker"><UserRound size={14} /> green-room collage / vol. 07</p><h1>Hello,<br />I’m <em>Om.</em></h1><p>{studioProfile.aboutIntro}</p><a className="about-hero__jump" href="#about-story">a little more about the work <ArrowUpRight size={16} /></a></div>
+        <div className="about-hero__copy"><p className="about-hero__kicker"><UserRound size={14} /> green-room collage / vol. 08</p><h1>Hello,<br />I’m <em>Om.</em></h1><p>{studioProfile.aboutIntro}</p><a className="about-hero__jump" href="#about-story">a little more about the work <ArrowUpRight size={16} /></a></div>
         <div className="about-hero__portrait-slot" aria-label="Reserved space for Om’s portrait image"><div className="portrait-slot__frame"><Camera size={36} /><span>portrait<br />off-frame</span><i /><i /><i /></div><div className="portrait-slot__sun" /><div className="portrait-slot__note">a face behind<br />the archive.</div><button aria-expanded={isArchiveNoteOpen} aria-label="Reveal an archive note" className="portrait-slot__tag" onClick={() => setIsArchiveNoteOpen((open) => !open)} type="button">{isArchiveNoteOpen ? <>not a bio.<br />a beginning.</> : <>Om<br />Nandurkar</>}</button></div>
         <div className="about-hero__shape about-hero__shape--one" aria-hidden="true" /><div className="about-hero__shape about-hero__shape--two" aria-hidden="true" />
       </section>

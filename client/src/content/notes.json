@@ -63,5 +63,83 @@
     "printable": true,
     "published": true,
     "featured": false
+  },
+  {
+    "id": "note-om-006",
+    "text": "Tum ho toh sab hai — some lines don't need a heavy arrangement, just an acoustic guitar and a quiet room.",
+    "label": "juhu beach scrap",
+    "color": "butter",
+    "rotation": 3,
+    "pinStyle": "tape",
+    "date": "2026-08-20",
+    "tags": ["songwriting", "Tere-Ishq-Mein"],
+    "printable": true,
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "note-om-007",
+    "text": "In Euclidean space, Zeno's dichotomy converges in finite time. Real infinity requires a metric tensor shift.",
+    "label": "notebook margin 09",
+    "color": "sky",
+    "rotation": -2,
+    "pinStyle": "blue-pin",
+    "date": "2026-08-26",
+    "tags": ["physics", "Jujutsu"],
+    "printable": true,
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "note-om-008",
+    "text": "Zero cursed energy is not an absence — it is absolute thermodynamic null and complete physical invariance.",
+    "label": "Toji mechanics note",
+    "color": "mint",
+    "rotation": -3,
+    "pinStyle": "red-pin",
+    "date": "2026-08-30",
+    "tags": ["biomechanics", "physics"],
+    "printable": true,
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "note-om-009",
+    "text": "At 2:17 AM, tape saturation adds the exact warmth that digital precision forgot to leave behind.",
+    "label": "studio desk scrap",
+    "color": "lilac",
+    "rotation": 2,
+    "pinStyle": "tape",
+    "date": "2026-09-01",
+    "tags": ["production", "ambient"],
+    "printable": true,
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "note-om-010",
+    "text": "Code gives your archive its architecture, but your memories and feelings provide the resonance.",
+    "label": "creator studio rule",
+    "color": "peach",
+    "rotation": -4,
+    "pinStyle": "red-pin",
+    "date": "2026-09-02",
+    "tags": ["code", "art"],
+    "printable": true,
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "note-om-011",
+    "text": "Observe people in silence. The best lyrics are usually written by watching others live.",
+    "label": "evening reflection",
+    "color": "butter",
+    "rotation": 1,
+    "pinStyle": "blue-pin",
+    "date": "2026-09-03",
+    "tags": ["observation", "lyric"],
+    "printable": true,
+    "published": true,
+    "featured": false
   }
 ]

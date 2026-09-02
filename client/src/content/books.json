@@ -1,0 +1,41 @@
+[
+  {
+    "id": "book-001",
+    "slug": "before-i-could-say-i-loved-you",
+    "title": "Before I Could Say I Loved You",
+    "status": "Available",
+    "category": "Romance / Drama",
+    "date": "2026-09-01",
+    "excerpt": "A story about Rahul and Naina, a white scarf, a stormy night, and a tragic twist.",
+    "pdfUrl": "/assets/Books/Before I Could Say I Loved You.pdf",
+    "published": true,
+    "featured": true,
+    "tags": ["romance", "tragedy", "college"]
+  },
+  {
+    "id": "book-002",
+    "slug": "coming-soon-2",
+    "title": "Part 2 (Coming Soon)",
+    "status": "Coming Soon",
+    "category": "Romance",
+    "date": "2026-10-01",
+    "excerpt": "The second part of the story...",
+    "pdfUrl": "",
+    "published": true,
+    "featured": false,
+    "tags": []
+  },
+  {
+    "id": "book-003",
+    "slug": "coming-soon-3",
+    "title": "Part 3 (Coming Soon)",
+    "status": "Coming Soon",
+    "category": "Romance",
+    "date": "2026-11-01",
+    "excerpt": "The final part of the story...",
+    "pdfUrl": "",
+    "published": true,
+    "featured": false,
+    "tags": []
+  }
+]

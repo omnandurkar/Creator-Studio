@@ -2,7 +2,8 @@
  * Pastel Afterimage Archive visual reminder: the release-detail room extends
  * Blue-Room Frequency with a calm editorial listening surface and clear exits.
  */
-import { ArrowLeft, ArrowUpRight, Clock3, ExternalLink, FileMusic, ListMusic, Music2, Orbit, Play, Quote, ScrollText, Sparkles, UsersRound } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Clock3, ExternalLink, FileMusic, ListMusic, Music2, Orbit, Pause, Play, Quote, ScrollText, Sparkles, UsersRound } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "wouter";
 import SiteShell from "@/components/SiteShell";
 import { findRelease, findSongById, publishedReleases, type Song } from "@/lib/content";
@@ -10,6 +11,20 @@ import { findRelease, findSongById, publishedReleases, type Song } from "@/lib/c
 export default function ReleaseDetail() {
   const { slug } = useParams<{ slug: string }>();
   const release = findRelease(slug);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    if (!release) return;
+    const handleAudioStatus = (event: Event) => {
+      const detail = (event as CustomEvent<{ isPlaying: boolean; id: string; title: string }>).detail;
+      if (detail) {
+        const isThisRelease = detail.id === release.id || detail.title === release.title || ("trackIds" in release && release.trackIds?.includes(detail.id));
+        setIsPlaying(Boolean(detail.isPlaying && isThisRelease));
+      }
+    };
+    window.addEventListener("creator-studio:audio-status", handleAudioStatus);
+    return () => window.removeEventListener("creator-studio:audio-status", handleAudioStatus);
+  }, [release]);
 
   if (!release) {
     return (
@@ -28,16 +43,30 @@ export default function ReleaseDetail() {
   const tracks = "trackIds" in release ? (release.trackIds ?? []).map((trackId) => findSongById(trackId)).filter((track): track is Song => Boolean(track)) : [];
   const audioPreview = "audioPreview" in release ? release.audioPreview : undefined;
   const relatedReleases = (release.relatedIds ?? []).map((id) => publishedReleases.find((item) => item.id === id)).filter((item): item is NonNullable<typeof item> => Boolean(item));
+
   const playRelease = (source = audioPreview, label: string = release.type) => {
     if (!source) return;
-    window.dispatchEvent(new CustomEvent("creator-studio:play-release", { detail: { id: release.id, title: release.title, source, label } }));
+    if (isPlaying) {
+      window.dispatchEvent(new CustomEvent("creator-studio:toggle-play"));
+    } else {
+      window.dispatchEvent(new CustomEvent("creator-studio:play-release", { detail: { id: release.id, title: release.title, source, label } }));
+    }
   };
+
   return (
     <SiteShell pageTheme="music">
       <section className="release-detail">
         <Link className="release-detail__back" href="/music"><ArrowLeft size={16} /> back to the blue room</Link>
         <div className="release-detail__grid">
-          <div className="release-detail__art"><div className="release-detail__record"><i /></div><span>{release.type}</span></div>
+          <div className="release-detail__art">
+            <div className={`release-detail__record ${isPlaying ? "is-spinning" : ""}`}>
+              {release.coverImage ? (
+                <img alt={`${release.title} cover artwork`} className="release-detail__record-img" src={release.coverImage} />
+              ) : null}
+              <i />
+            </div>
+            <span>{release.type}</span>
+          </div>
           <div className="release-detail__copy">
             <p className="section-kicker"><Music2 size={14} /> release note</p>
             {release.isIllustrative && <p className="illustrative-label illustrative-label--inline">Studio sketch no. 01 · first pressing</p>}
@@ -45,7 +74,19 @@ export default function ReleaseDetail() {
             <p className="release-detail__meta">{release.type} · {new Date(release.releaseDate).getFullYear()}</p>
             <p className="release-detail__description">{release.description}</p>
             {"mood" in release && release.mood && <div className="release-detail__moods">{release.mood.map((mood) => <span key={mood}>{mood}</span>)}</div>}
-            {audioPreview && <button className="release-detail__preview release-detail__preview--ready" onClick={() => playRelease()} type="button"><Play size={17} fill="currentColor" /> play in the listening room <span>{release.duration ?? ""}</span></button>}
+            {audioPreview && (
+              <button className="release-detail__preview release-detail__preview--ready" onClick={() => playRelease()} type="button">
+                {isPlaying ? (
+                  <>
+                    <Pause size={17} fill="currentColor" /> pause in the listening room <span>{release.duration ?? ""}</span>
+                  </>
+                ) : (
+                  <>
+                    <Play size={17} fill="currentColor" /> play in the listening room <span>{release.duration ?? ""}</span>
+                  </>
+                )}
+              </button>
+            )}
             {!audioPreview && <p className="release-detail__unavailable"><Clock3 size={16} /> This preview is still kept in the margins.</p>}
             {releaseLinks.length > 0 && <div className="release-detail__links">{releaseLinks.map(([platform, url]) => <a href={url} key={platform} rel="noreferrer" target="_blank">{platform}<ExternalLink size={14} /></a>)}</div>}
           </div>

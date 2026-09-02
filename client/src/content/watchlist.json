@@ -1,16 +1,30 @@
 [
   {
-    "id": "watchlist-template-001",
-    "title": "A future screening",
-    "format": "feature / to be filed",
-    "reason": "A space for the title that arrives with a recommendation, a question, or a quiet insistence.",
+    "id": "watchlist-001",
+    "title": "Avengers: Doomsday",
+    "format": "Anthony & Joe Russo · RDJ as Doctor Doom (May 2026)",
+    "reason": "Trailer Depiction: RDJ's chilling unmasking as Victor von Doom. My Expectation: A dark multiversal reckoning where Doom reshapes collapsing realities into Battleworld before Secret Wars.",
     "published": true
   },
   {
-    "id": "watchlist-template-002",
-    "title": "The next late showing",
-    "format": "screening / to be filed",
-    "reason": "A ticket stub held open for something not watched, rated, or reviewed yet.",
+    "id": "watchlist-002",
+    "title": "King",
+    "format": "Sujoy Ghosh · Shah Rukh Khan & Suhana Khan (2026)",
+    "reason": "Trailer Depiction: SRK as a lethal, gray-haired underworld assassin protecting his prodigy in neon rains. My Expectation: A raw, stylized action crime epic with international hitman lore.",
+    "published": true
+  },
+  {
+    "id": "watchlist-003",
+    "title": "Dune: Part Two",
+    "format": "Denis Villeneuve · 70mm IMAX",
+    "reason": "Trailer Depiction: Paul Atreides riding the grandfather sandworm across Arrakis. My Expectation: Hans Zimmer's desert power acoustics & Giedi Prime infrared cinematography.",
+    "published": true
+  },
+  {
+    "id": "watchlist-004",
+    "title": "Blade Runner 2049",
+    "format": "Roger Deakins · 4K Master",
+    "reason": "Trailer Depiction: K walking through orange dust ruins of Las Vegas. My Expectation: Color theory in brutalist architecture & tears in rain acoustic themes.",
     "published": true
   }
 ]

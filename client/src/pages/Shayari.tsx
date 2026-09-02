@@ -3,7 +3,7 @@
  * room—blush paper, pressed botanical shapes, faded crimson ink, wax seals,
  * moon vectors, and deliberately spacious reading surfaces.
  */
-import { ArrowDown, ArrowUpRight, Feather, Flower2, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowUpRight, ChevronDown, ChevronUp, Feather, Flower2, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import SiteShell from "@/components/SiteShell";
@@ -33,9 +33,14 @@ function ShayariCard({ entry, index }: { entry: ShayariItem; index: number }) {
   );
 }
 
+const SHAYARI_LIMIT = 4;
+
 export default function Shayari() {
   const [isSealOpen, setIsSealOpen] = useState(false);
+  const [isArchiveExpanded, setIsArchiveExpanded] = useState(false);
   const featured = publishedShayari.find((entry) => entry.featured) ?? publishedShayari[0];
+
+  const visibleShayari = isArchiveExpanded ? publishedShayari : publishedShayari.slice(0, SHAYARI_LIMIT);
 
   return (
     <SiteShell pageTheme="shayari">
@@ -90,8 +95,19 @@ export default function Shayari() {
           <p>Each card opens into a quiet reading page. Your original shayaris can appear in Hindi, Urdu, Romanized script, English—or all of them together.</p>
         </div>
         <div className="shayari-card-grid">
-          {publishedShayari.map((entry, index) => <ShayariCard entry={entry} index={index} key={entry.id} />)}
+          {visibleShayari.map((entry, index) => <ShayariCard entry={entry} index={index} key={entry.id} />)}
         </div>
+        {publishedShayari.length > SHAYARI_LIMIT && (
+          <div className="section-more-wrapper">
+            <button className="section-more-btn" onClick={() => setIsArchiveExpanded((prev) => !prev)} type="button">
+              {isArchiveExpanded ? (
+                <>Show Less <ChevronUp size={16} /></>
+              ) : (
+                <>View More Shayaris ({publishedShayari.length - SHAYARI_LIMIT} more) <ChevronDown size={16} /></>
+              )}
+            </button>
+          </div>
+        )}
       </section>
 
       <section className="shayari-workspace">

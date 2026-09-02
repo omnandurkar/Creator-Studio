@@ -1,11 +1,6 @@
-/**
- * Pastel Afterimage Archive visual reminder: this shared navigation uses warm
- * paper, ink outlines, coral stamps, and concise labels so page themes can vary
- * without losing a clear way home.
- */
 import { Menu, Search, Sparkles, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { toast } from "sonner";
 import StudioMark from "./StudioMark";
 import AccessibilityPanel from "./AccessibilityPanel";
@@ -14,14 +9,23 @@ const sections = [
   { label: "Music", href: "/music", isReady: true },
   { label: "Shayari", href: "/shayari", isReady: true },
   { label: "Writings", href: "/writings", isReady: true },
+  { label: "Library", href: "/library", isReady: true },
   { label: "Notes", href: "/notes", isReady: true },
   { label: "Cinephile", href: "/cinephile", isReady: true },
-  { label: "Mind Garden", href: "/mind-garden", isReady: true },
+  { label: "ADHD Garden", href: "/adhd-garden", isReady: true },
   { label: "About", href: "/about", isReady: true },
 ];
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [location] = useLocation();
+
+  const isSectionActive = (href: string) => {
+    if (href === "/") return location === "/";
+    if (href === "/library") return location === "/library" || location.startsWith("/research") || location.startsWith("/books");
+    if (href === "/adhd-garden") return location === "/adhd-garden" || location === "/adhd" || location === "/mind-garden";
+    return location === href || location.startsWith(`${href}/`);
+  };
 
   const comingSoon = (section: string) => {
     setIsMenuOpen(false);
@@ -36,25 +40,33 @@ export default function SiteHeader() {
         <Link href="/" className="brand-lockup" aria-label="Creator Studio home">
           <StudioMark className="brand-lockup__mark" />
           <span className="brand-lockup__copy">
-            <span className="brand-lockup__eyebrow">the personal archive of</span>
+            <span className="brand-lockup__eyebrow">Om's personal archive of</span>
             <span className="brand-lockup__name">Creator Studio</span>
           </span>
         </Link>
 
         <nav className="site-nav" aria-label="Primary navigation">
-          {sections.map((section) =>
-            section.isReady ? (
-              <Link className="site-nav__link" href={section.href} key={section.label}>{section.label}</Link>
+          {sections.map((section) => {
+            const active = section.isReady && isSectionActive(section.href);
+            return section.isReady ? (
+              <Link
+                className={`site-nav__link ${active ? "is-active" : ""}`}
+                href={section.href}
+                key={section.label}
+              >
+                {active && <span className="site-nav__active-dot" aria-hidden="true" />}
+                {section.label}
+              </Link>
             ) : (
               <button className="site-nav__link" key={section.label} onClick={() => comingSoon(section.label)} type="button">
                 {section.label}
               </button>
-            ),
-          )}
+            );
+          })}
         </nav>
 
         <div className="site-header__tools"><Link aria-label="Search the archive" className="header-search" href="/search"><Search size={17} /></Link><AccessibilityPanel /></div>
-        <Link className="header-action" href="/contact">
+        <Link className={`header-action ${location === "/contact" ? "is-active" : ""}`} href="/contact">
           <Sparkles aria-hidden="true" size={15} strokeWidth={2.25} />
           <span>Say hello</span>
         </Link>
@@ -72,17 +84,26 @@ export default function SiteHeader() {
 
       {isMenuOpen && (
         <nav className="mobile-nav" aria-label="Mobile navigation">
-          {sections.map((section, index) =>
-            section.isReady ? (
-              <Link className="mobile-nav__link" href={section.href} key={section.label} onClick={() => setIsMenuOpen(false)} style={{ "--item-index": index } as React.CSSProperties}>
-                <span>0{index + 1}</span>{section.label}
+          {sections.map((section, index) => {
+            const active = section.isReady && isSectionActive(section.href);
+            return section.isReady ? (
+              <Link
+                className={`mobile-nav__link ${active ? "is-active" : ""}`}
+                href={section.href}
+                key={section.label}
+                onClick={() => setIsMenuOpen(false)}
+                style={{ "--item-index": index } as React.CSSProperties}
+              >
+                <span>0{index + 1}</span>
+                {section.label}
+                {active && <span className="mobile-nav__active-badge">Current</span>}
               </Link>
             ) : (
               <button className="mobile-nav__link" key={section.label} onClick={() => comingSoon(section.label)} style={{ "--item-index": index } as React.CSSProperties} type="button">
                 <span>0{index + 1}</span>{section.label}
               </button>
-            ),
-          )}
+            );
+          })}
           <Link className="mobile-nav__contact" href="/contact" onClick={() => setIsMenuOpen(false)}><Sparkles aria-hidden="true" size={16} /> Say hello</Link>
         </nav>
       )}

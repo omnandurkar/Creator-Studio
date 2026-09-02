@@ -1,10 +1,5 @@
-/**
- * Pastel Afterimage Archive visual reminder: Home is the Sunset Soundcheck room.
- * Use peach paper, coral stamps, butter highlights, waveform vectors, and an
- * off-centre editorial composition that makes the creator’s content the artwork.
- */
-import { ArrowDownRight, ArrowUpRight, CirclePlay, Disc3, Headphones, MoveRight, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { ArrowDownRight, ArrowUpRight, Atom, BookOpen, CirclePlay, Disc3, ExternalLink, Film, Flower2, Headphones, MoveRight, Music2, Pause, Sparkles, StickyNote } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import SiteShell from "@/components/SiteShell";
 import { homeContent, studioProfile } from "@/lib/content";
@@ -17,10 +12,13 @@ const heroLines = [
 ];
 
 const archiveRooms = [
-  { no: "01", title: "Music", copy: "songs / albums / fragments", className: "archive-card--music" },
-  { no: "02", title: "Shayari", copy: "lines that linger", className: "archive-card--shayari" },
-  { no: "03", title: "Notes", copy: "small thoughts, pinned", className: "archive-card--notes" },
-  { no: "04", title: "Cinephile", copy: "frames that stayed", className: "archive-card--cinephile" },
+  { no: "01", title: "Music", copy: "songs / acoustic singles / demos", href: "/music", className: "archive-card--music", icon: <Music2 size={16} /> },
+  { no: "02", title: "Shayari", copy: "Devanagari lines & romantic poetry", href: "/shayari", className: "archive-card--shayari", icon: "☾" },
+  { no: "03", title: "Writings", copy: "essays on sound, physics & code", href: "/writings", className: "archive-card--writings", icon: <BookOpen size={16} /> },
+  { no: "04", title: "Library", copy: "Gojo & Toji mathematical papers", href: "/library", className: "archive-card--library", icon: <Atom size={16} /> },
+  { no: "05", title: "Notes", copy: "pinned scraps & lemon wall", href: "/notes", className: "archive-card--notes", icon: <StickyNote size={16} /> },
+  { no: "06", title: "Cinephile", copy: "Project Hail Mary & screening shelf", href: "/cinephile", className: "archive-card--cinephile", icon: <Film size={16} /> },
+  { no: "07", title: "ADHD Garden", copy: "constructive mind & interest petals", href: "/adhd-garden", className: "archive-card--adhd", icon: <Flower2 size={16} /> },
 ];
 
 function SoundWave() {
@@ -45,17 +43,42 @@ function SunBurst() {
 
 export default function Home() {
   const [lineIndex, setLineIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const handleStatus = (e: Event) => {
+      const detail = (e as CustomEvent<{ isPlaying: boolean }>).detail;
+      if (typeof detail?.isPlaying === "boolean") {
+        setIsPlaying(detail.isPlaying);
+      }
+    };
+    window.addEventListener("creator-studio:audio-status", handleStatus);
+    return () => window.removeEventListener("creator-studio:audio-status", handleStatus);
+  }, []);
 
   const revealNextLine = () => {
     setLineIndex((current) => (current + 1) % heroLines.length);
     toast("A new line from the studio.", { description: "The record label keeps a few thoughts in rotation." });
   };
 
-  const previewUnavailable = () => {
-    window.dispatchEvent(new Event("creator-studio:play-demo"));
-    toast("Now playing: Postcard for 2:17 AM", {
-      description: "Studio sketch no. 01 — kept in the archive’s late-night drawer.",
-    });
+  const playFeaturedSong = () => {
+    if (isPlaying) {
+      window.dispatchEvent(new Event("creator-studio:toggle-play"));
+    } else {
+      window.dispatchEvent(
+        new CustomEvent("creator-studio:play-release", {
+          detail: {
+            id: "tere-ishq-mein-001",
+            title: "Tere Ishq Mein",
+            source: "/assets/Music/Originals/Tere-Ishq-Mein/Tere-Ishq-Mein.mp3",
+            label: "Single · Acoustic Ballad",
+          },
+        })
+      );
+      toast("Now playing: Tere Ishq Mein", {
+        description: "Acoustic Single · Listening Room",
+      });
+    }
   };
 
   return (
@@ -81,14 +104,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="studio-hero__art" aria-label="A watercolor portrait of Om woven into a record and notebook studio collage">
+        <div className="studio-hero__art" aria-label="A portrait of Om woven into a record and notebook studio collage">
           <div className="studio-hero__artwork studio-hero__collage-art">
             <img alt="" aria-hidden="true" className="hero-collage__portrait" src={studioProfile.portraitImage} />
             <div className="hero-collage__paper hero-collage__paper--blue" />
             <div className="hero-collage__paper hero-collage__paper--cream">
               <span>side one</span><i /><i /><i /><i />
             </div>
-            <div className="hero-collage__record"><div /></div>
+            <div className={`hero-collage__record ${isPlaying ? "is-spinning" : ""}`}><div /></div>
             <div className="hero-collage__sun"><SunBurst /></div>
             <div className="hero-collage__scribble">everything becomes<br />a song eventually</div>
           </div>
@@ -116,12 +139,15 @@ export default function Home() {
       <section className="now-playing-section" aria-labelledby="now-playing-title">
         <div className="now-playing-section__label-wrap">
           <p className="section-kicker"><span className="section-kicker__disc" /> latest from the studio</p>
-          <h2 id="now-playing-title">A new sound<br /><em>is finding its way here.</em></h2>
+          <h2 id="now-playing-title">Featured Single:<br /><em>Tere Ishq Mein.</em></h2>
         </div>
 
         <article className="release-feature">
           <div className="release-feature__art release-feature__art--vector">
-            <div className="release-vector__disc"><div /></div>
+            <div className={`release-vector__disc ${isPlaying ? "is-spinning" : ""}`}>
+              <img alt="Tere Ishq Mein song cover poster" className="release-disc__cover-img" src="/assets/Music/Originals/Tere-Ishq-Mein/Tere-Ishq-Mein-cover.jpg" />
+              <div className="release-disc__center-hole" />
+            </div>
             <div className="release-vector__tape" />
             <div className="release-vector__curves" aria-hidden="true">∿<br />∿</div>
             <span className="release-vector__line release-vector__line--one" />
@@ -134,13 +160,41 @@ export default function Home() {
             <p className="release-feature__format">{homeContent.featuredRelease.format}</p>
             <p className="release-feature__description">{homeContent.featuredRelease.description}</p>
             <div className="release-feature__player">
-              <button aria-label="Play illustrative audio sketch" className="player-play" onClick={previewUnavailable} type="button"><CirclePlay size={24} fill="currentColor" /></button>
-              <div className="player-track"><span className="player-track__name">{homeContent.previewSong.title}</span><span>{homeContent.previewSong.duration}</span></div>
-              <div aria-hidden="true" className="player-wave"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
+              <button aria-label={isPlaying ? "Pause Tere Ishq Mein" : "Play Tere Ishq Mein"} className="player-play" onClick={playFeaturedSong} type="button">
+                {isPlaying ? <Pause size={24} fill="currentColor" /> : <CirclePlay size={24} fill="currentColor" />}
+              </button>
+              <div className="player-track">
+                <span className="player-track__name">{homeContent.previewSong.title}</span>
+                <span>{homeContent.previewSong.duration}</span>
+              </div>
+              <div aria-hidden="true" className={`player-wave ${isPlaying ? "is-active" : ""}`}><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
             </div>
-            <Link className="release-feature__link" href="/music">open release page <ArrowUpRight aria-hidden="true" size={16} /></Link>
+            <Link className="release-feature__link" href="/music/tere-ishq-mein">open release page <ArrowUpRight aria-hidden="true" size={16} /></Link>
           </div>
         </article>
+      </section>
+
+      {/* ── Research & Papers Spotlight ── */}
+      <section className="home-research-spotlight">
+        <div className="home-research-spotlight__heading">
+          <p className="section-kicker"><Atom size={14} /> mathematical &amp; physical research</p>
+          <h2>Peer-Reviewed Papers &amp;<br /><em>Metaphysical Mechanics.</em></h2>
+          <p>Rigorous mathematical physics modeling of non-Euclidean space and thermodynamic anomalies in anime systems.</p>
+        </div>
+        <div className="home-research-grid">
+          <Link className="home-research-card" href="/research/mathematical-physics-gojo-limitless">
+            <span className="home-research-tag">Paper 01 · Differential Geometry</span>
+            <h3>Riemannian Metric Tensor Field Distortions in Gojo's Limitless</h3>
+            <p>Formulating Infinity, Red, Blue, and Hollow Purple through Einstein Field Equations and Cauchy-Schwarz metric convergence.</p>
+            <span className="home-research-link">Read Full Paper <ArrowUpRight size={15} /></span>
+          </Link>
+          <Link className="home-research-card" href="/research/toji-fushiguro-heavenly-restriction">
+            <span className="home-research-tag">Paper 02 · Biomechanics</span>
+            <h3>Biomechanical &amp; Thermodynamic Analysis of Toji Fushiguro</h3>
+            <p>A zero-cursed energy thermodynamic null state, absolute sensory resolution, and tactical anti-domain mechanics.</p>
+            <span className="home-research-link">Read Full Paper <ArrowUpRight size={15} /></span>
+          </Link>
+        </div>
       </section>
 
       <section className="studio-note-section">
@@ -163,9 +217,9 @@ export default function Home() {
         </div>
         <div className="archive-card-grid">
           {archiveRooms.map((room) => (
-            <Link className={`archive-card ${room.className}`} href={`/${room.title.toLowerCase()}`} key={room.title}>
+            <Link className={`archive-card ${room.className}`} href={room.href} key={room.title}>
               <span className="archive-card__number">{room.no}</span>
-              <span className="archive-card__icon" aria-hidden="true">{room.title === "Music" ? "≈" : room.title === "Shayari" ? "☾" : room.title === "Notes" ? "✎" : "▣"}</span>
+              <span className="archive-card__icon" aria-hidden="true">{room.icon}</span>
               <span className="archive-card__body"><strong>{room.title}</strong><small>{room.copy}</small></span>
               <MoveRight aria-hidden="true" className="archive-card__arrow" size={20} />
             </Link>

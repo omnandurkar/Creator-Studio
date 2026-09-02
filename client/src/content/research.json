@@ -1,0 +1,94 @@
+[
+  {
+    "id": "research-001",
+    "slug": "mathematical-physics-gojo-limitless",
+    "title": "Gojo's Infinity Physics Analysis",
+    "authors": [
+      "Om M Nandurkar"
+    ],
+    "abstract": "The hereditary cursed technique known as the Limitless represents an unprecedented convergence of abstract mathematical analysis, relativistic field theories, and computational neurobiology. This investigation establishes a comprehensive formal framework for the mechanics governing the Limitless and its auxiliary manifestations. We demonstrate that the popular conceptualization of the neutral Infinity as a manifestation of Zeno's classical dichotomy paradox fails within flat Euclidean space, as infinite geometric progressions converge in finite proper time. Instead, the phenomenon is accurately modeled as a continuous deformation of the local Riemannian spacetime metric tensor via a cursed-energy-dependent conformal factor, generating infinite proper distance across a finite coordinate interval.",
+    "field": "Mathematical Physics",
+    "conference": "Independent Research",
+    "date": "2026-09-01",
+    "pdfUrl": "",
+    "externalUrl": "",
+    "tags": [
+      "Riemannian-geometry",
+      "Jujutsu-Kaisen",
+      "mathematical-physics",
+      "metric-tensor",
+      "quantum-computation",
+      "topology"
+    ],
+    "published": true,
+    "featured": true
+  },
+  {
+    "id": "research-004",
+    "slug": "toji-fushiguro-heavenly-restriction",
+    "title": "Toji Fushiguro Heavenly Restriction Analysis",
+    "authors": [
+      "Om M Nandurkar"
+    ],
+    "abstract": "The existential outlier designated as Toji Fushiguro represents the absolute antithesis of standard cursed-energy metaphysics within jujutsu society. While traditional jujutsu power scaling relies on the accumulation and output of negative cursed energy, Fushiguro operates under a rare manifestation of Heavenly Restriction characterized by the complete elimination of cursed energy to an absolute zero state. This investigation models the biomechanical, thermodynamic, and metaphysical systems that govern Fushiguro's combat efficacy, barrier invisibility, Navier-Stokes fluid-dynamic sensory perception, and specialized cursed tool weaponry.",
+    "field": "Biomechanical Metaphysics",
+    "conference": "Independent Research",
+    "date": "2026-09-02",
+    "pdfUrl": "",
+    "externalUrl": "",
+    "tags": [
+      "Heavenly-Restriction",
+      "Jujutsu-Kaisen",
+      "biomechanics",
+      "Navier-Stokes",
+      "barrier-topology",
+      "cursed-tools"
+    ],
+    "published": true,
+    "featured": true
+  },
+  {
+    "id": "research-002",
+    "slug": "generative-models-creative-content",
+    "title": "Generative Models for Creative Content",
+    "authors": [
+      "Om M Nandurkar"
+    ],
+    "abstract": "We explore the intersection of generative AI and creative expression, examining how diffusion models and large language models can assist in music composition and poetry generation while preserving artistic authenticity. Our experiments demonstrate that hybrid human-AI workflows produce outputs rated significantly higher in emotional resonance compared to purely automated approaches.",
+    "field": "Artificial Intelligence",
+    "conference": "Research Preprint",
+    "date": "2026-05-20",
+    "pdfUrl": "",
+    "externalUrl": "",
+    "tags": [
+      "generative-AI",
+      "creativity",
+      "music-generation",
+      "poetry"
+    ],
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "research-003",
+    "slug": "sentiment-analysis-hinglish",
+    "title": "Sentiment Analysis in Hinglish Text",
+    "authors": [
+      "Om M Nandurkar"
+    ],
+    "abstract": "Code-mixed text presents unique challenges for sentiment analysis systems. This paper proposes a multi-task learning framework that jointly models language identification and sentiment classification for Hinglish (Hindi-English) social media text, achieving state-of-the-art results on benchmark datasets.",
+    "field": "Natural Language Processing",
+    "conference": "Research Preprint",
+    "date": "2026-03-10",
+    "pdfUrl": "",
+    "externalUrl": "",
+    "tags": [
+      "sentiment-analysis",
+      "code-mixing",
+      "Hinglish",
+      "social-media"
+    ],
+    "published": true,
+    "featured": false
+  }
+]

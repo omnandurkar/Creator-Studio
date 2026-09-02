@@ -19,6 +19,8 @@ import weather from "@/content/weather.json";
 import artifacts from "@/content/artifacts.json";
 import connections from "@/content/connections.json";
 import press from "@/content/press.json";
+import books from "@/content/books.json";
+import research from "@/content/research.json";
 
 export type StudioProfile = { artistName: string; fullName: string; shortTagline: string; aboutIntro: string; aboutNote: string; signatureLine: string; currentlyCreating: string; availability: string; portraitImage?: string };
 export const studioProfile = site as StudioProfile;
@@ -99,13 +101,13 @@ export type Note = {
 export const publishedNotes = (notes as Note[]).filter((entry) => entry.published);
 
 export type FilmNote = {
-  id: string; slug: string; title: string; director: string; year: string; watchedOn: string; posterImage?: string; whatStayedWithMe: string; review: string; sceneToRemember: string; motifs?: string[]; relatedSongIds?: string[]; crossfadeNote?: string; tags: string[]; published: boolean; featured: boolean; isTemplate?: boolean;
+  id: string; slug: string; title: string; director: string; year: string; watchedOn: string; posterImage?: string; trailerUrl?: string; whatStayedWithMe: string; review: string; sceneToRemember: string; motifs?: string[]; relatedSongIds?: string[]; crossfadeNote?: string; spoilers?: string; spoilerSections?: { title: string; text: string }[]; tags: string[]; published: boolean; featured: boolean; isTemplate?: boolean;
 };
 export const publishedFilms = (films as FilmNote[]).filter((entry) => entry.published);
 export function findFilm(slug: string) { return publishedFilms.find((entry) => entry.slug === slug); }
 
 export type Hobby = { id: string; title: string; description: string; icon: string; color: "peach" | "butter" | "sky"; published: boolean; isTemplate?: boolean };
-export type ContactDetails = { email: string; bookingEmail: string; instagram: string; youtube: string; spotify: string; availability: string; collaborationTypes: string[] };
+export type ContactDetails = { email: string; bookingEmail: string; instagram: string; portfolio: string; youtube: string; spotify: string; availability: string; collaborationTypes: string[] };
 export const publishedHobbies = (hobbies as Hobby[]).filter((entry) => entry.published);
 export const contactDetails = contact as ContactDetails;
 export type WatchlistItem = { id: string; title: string; format: string; reason: string; published: boolean; isTemplate?: boolean };
@@ -120,3 +122,22 @@ export type ConnectionArchive = { frameOfTheMonth: { filed: boolean; title: stri
 export const connectionArchive = connections as ConnectionArchive;
 export type PressKit = { creator: string; role: string; archiveName: string; shortBio: string; focus: string[]; pressImages: { src: string; alt: string }[]; selectedRoutes: { label: string; route: string }[] };
 export const pressKit = press as PressKit;
+
+export type Book = {
+  id: string; slug: string; title: string; status: string; category: string; date: string; excerpt: string; pdfUrl: string; tags: string[]; published: boolean; featured: boolean;
+};
+export const publishedBooks = (books as Book[]).filter((entry) => entry.published);
+export function findBook(slug: string) { return publishedBooks.find((entry) => entry.slug === slug); }
+
+export type ResearchPaper = {
+  id: string; slug: string; title: string; authors: string[]; abstract: string; field: string; conference?: string; date: string; pdfUrl: string; externalUrl: string; tags: string[]; published: boolean; featured: boolean;
+};
+export const publishedResearch = (research as ResearchPaper[]).filter((entry) => entry.published);
+export function findResearch(slug: string) { return publishedResearch.find((entry) => entry.slug === slug); }
+
+export type LibraryItem = (Book & { kind: "book" }) | (ResearchPaper & { kind: "research" });
+export const allLibraryItems: LibraryItem[] = [
+  ...publishedBooks.map((b) => ({ ...b, kind: "book" as const })),
+  ...publishedResearch.map((r) => ({ ...r, kind: "research" as const })),
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+

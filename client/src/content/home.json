@@ -1,18 +1,18 @@
 {
   "featuredRelease": {
-    "kicker": "Studio sketch no. 01 · archive draft",
-    "title": "Postcard for 2:17 AM",
-    "format": "Instrumental sketch · 2026",
-    "description": "A warm late-night instrumental kept in the archive’s first listening room: a small light left on at 2:17 AM.",
-    "coverImage": "/assets/home-sunset-soundcheck.svg"
+    "kicker": "Featured Release · Acoustic Single",
+    "title": "Tere Ishq Mein",
+    "format": "Single / Acoustic Ballad · 2026",
+    "description": "An intimate Hindi-English ballad about quiet devotion and lingering memory, built around raw acoustic guitar, room tone, and warm tape saturation.",
+    "coverImage": ""
   },
   "previewSong": {
-    "title": "Postcard for 2:17 AM",
-    "duration": "01:00",
-    "status": "Studio sketch no. 01 · one minute after midnight"
+    "title": "Tere Ishq Mein",
+    "duration": "03:42",
+    "status": "Single · Available now in listening room"
   },
   "featuredNote": {
-    "text": "The unfinished version is still part of the song.",
-    "label": "Studio note · kept in the margin"
+    "text": "Tum ho toh sab hai — some lines don't need a heavy arrangement, just an acoustic guitar and a quiet room.",
+    "label": "Juhu Beach scrap · kept close"
   }
 }
