@@ -106,7 +106,7 @@ export type FilmNote = {
 export const publishedFilms = (films as FilmNote[]).filter((entry) => entry.published);
 export function findFilm(slug: string) { return publishedFilms.find((entry) => entry.slug === slug); }
 
-export type Hobby = { id: string; title: string; description: string; icon: string; color: "peach" | "butter" | "sky"; published: boolean; isTemplate?: boolean };
+export type Hobby = { id: string; title: string; description: string; icon: string; color: "peach" | "butter" | "sky"; published: boolean; isTemplate?: boolean; route?: string };
 export type ContactDetails = { email: string; bookingEmail: string; instagram: string; portfolio: string; youtube: string; spotify: string; availability: string; collaborationTypes: string[] };
 export const publishedHobbies = (hobbies as Hobby[]).filter((entry) => entry.published);
 export const contactDetails = contact as ContactDetails;

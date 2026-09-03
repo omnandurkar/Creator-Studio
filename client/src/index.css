@@ -9121,12 +9121,21 @@
 
   .hobby-card {
     border: 1.5px solid var(--ink);
+    color: var(--ink);
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     min-height: 350px;
     overflow: hidden;
     padding: 1.25rem;
     position: relative;
+    text-decoration: none;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .hobby-card:hover {
+    box-shadow: 6px 6px 0 var(--ink);
+    transform: translate(-2px, -2px);
   }
 
   .hobby-card--peach {
@@ -9949,4 +9958,323 @@
 
 .contact-end {
   min-height: 330px;
+}
+
+.about-hero__nerd-quote-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.tony-stark-quote-badge {
+  background: #fff6d6;
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 3.5px 3.5px 0 var(--ink);
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0;
+  max-width: 380px;
+  padding: 0.85rem 1.1rem;
+  position: relative;
+}
+
+.tony-stark-quote-badge__nerd-tag {
+  align-self: flex-start;
+  background: #315f86;
+  border: 1px solid var(--ink);
+  border-radius: 4px;
+  color: #fffaf0;
+  font-family: var(--font-interface);
+  font-size: 0.58rem;
+  font-weight: 800;
+  font-style: normal !important;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+  padding: 2px 7px;
+  text-transform: uppercase;
+}
+
+.tony-stark-quote-badge span:not(.tony-stark-quote-badge__nerd-tag) {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: rgba(32, 37, 47, 0.88);
+}
+
+.tony-stark-quote-badge strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.tony-stark-quote-badge small {
+  font-family: var(--font-interface);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #315f86;
+  margin-top: 0.2rem;
+}
+
+/* ── About Page Manifesto & Origin Story Additions ── */
+.about-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.about-hero__garden-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ink);
+  font-family: var(--font-interface);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.portrait-slot__frame--real {
+  position: relative;
+  overflow: hidden;
+  padding: 0 !important;
+  background: var(--ink);
+}
+
+.portrait-slot__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+.portrait-slot__overlay-label {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(32, 37, 47, 0.85);
+  color: #fff;
+  font-family: var(--font-interface);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* Sparks Section */
+.about-sparks-section {
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem);
+  background: #f4faee;
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.about-sparks-section__heading {
+  margin-bottom: 2.5rem;
+  max-width: 1100px;
+}
+
+.about-sparks-section__heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+  margin: 0.5rem 0;
+}
+
+.about-sparks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+}
+
+.about-spark-card {
+  background: #fff8e9;
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 1.6rem;
+}
+
+.about-spark-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.about-spark-card__no {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: #497a5b;
+}
+
+.about-spark-card__tag {
+  font-family: var(--font-interface);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: #e2f0d9;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.about-spark-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.03em;
+}
+
+.about-spark-card p {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(32, 37, 47, 0.84);
+  margin: 0;
+}
+
+/* Chambers Section */
+.about-chambers-section {
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem);
+}
+
+.about-chambers-section__heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  margin: 0.4rem 0 0.8rem;
+}
+
+.about-chambers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin-top: 2rem;
+}
+
+.about-chamber-card {
+  background: #fbf6ee;
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.about-chamber-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.about-chamber-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.about-chamber-card__no {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+}
+
+.about-chamber-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0 0 0.2rem;
+}
+
+.about-chamber-card__role {
+  font-family: var(--font-interface);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #497a5b;
+  margin-bottom: 0.75rem;
+}
+
+.about-chamber-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(32, 37, 47, 0.82);
+  margin-bottom: 1.25rem;
+}
+
+.about-chamber-card__link {
+  font-family: var(--font-interface);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: auto;
+}
+
+/* Scaffolds Section */
+.about-scaffolds-section {
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 6vw, 6rem);
+  background: #f0f7f2;
+  border-top: 1.5px solid var(--ink);
+}
+
+.about-scaffolds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin-top: 2rem;
+}
+
+.about-scaffold-card {
+  background: #fff;
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.about-scaffold-card__step {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: #497a5b;
+}
+
+.about-scaffold-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0.4rem 0 0.5rem;
+}
+
+.about-scaffold-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
 }

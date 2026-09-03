@@ -1,26 +1,29 @@
 [
   {
-    "id": "hobby-template-001",
-    "title": "A thing I make time for",
-    "description": "An open column for a small obsession, ritual, instrument, pastime, sport, book habit, or anything that quietly feeds the work.",
+    "id": "hobby-001",
+    "title": "Late-Night Acoustic & Beach Scratches",
+    "description": "Quiet 2:17 AM acoustic sessions, recording raw voice notes by the Juhu waves, and chasing songs where tape warmth and room tone tell the story.",
     "icon": "◎",
     "color": "peach",
+    "route": "/music",
     "published": true
   },
   {
-    "id": "hobby-template-002",
-    "title": "A world that feeds the work",
-    "description": "A space for a film, a street, a sound, a place, a conversation, or a practice that keeps the ideas moving.",
+    "id": "hobby-002",
+    "title": "Sci-Fi Cinema & Physics Derivations",
+    "description": "Deep dives into Villeneuve's Arrival logograms, Nolan's Gargantua black hole physics, and mathematical geometry for anime mechanics.",
     "icon": "✳",
     "color": "butter",
+    "route": "/library",
     "published": true
   },
   {
-    "id": "hobby-template-003",
-    "title": "Something outside the studio",
-    "description": "A pocket for the off-stage part of a life that is still becoming known.",
+    "id": "hobby-003",
+    "title": "Shayari, Coffee & Unfinished Pages",
+    "description": "Devanagari poetry scraps, strong black coffee, long quiet walks, and keeping room for ideas that haven't found their final shape yet.",
     "icon": "↗",
     "color": "sky",
+    "route": "/shayari",
     "published": true
   }
 ]
