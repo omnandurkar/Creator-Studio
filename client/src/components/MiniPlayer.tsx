@@ -88,16 +88,16 @@ export default function MiniPlayer() {
     };
   }, [activeRelease, isPlaying]);
 
-  if (!isVisible) return null;
-
   return (
-    <div className="mini-player" aria-label="Creator Studio audio player">
+    <>
       <audio
         onEnded={() => {
           setIsPlaying(false);
           notifyStatus(false);
         }}
-        onLoadedMetadata={(event) => setDuration(Number.isFinite(event.currentTarget.duration) ? event.currentTarget.duration : 60)}
+        onLoadedMetadata={(event) =>
+          setDuration(Number.isFinite(event.currentTarget.duration) ? event.currentTarget.duration : 60)
+        }
         onPause={() => {
           setIsPlaying(false);
           notifyStatus(false);
@@ -110,41 +110,53 @@ export default function MiniPlayer() {
         ref={audioRef}
         src={activeRelease.source}
       />
-      <span className="mini-player__tag">{activeRelease.label ?? "studio sketch"}</span>
-      <button aria-label={isPlaying ? "Pause audio" : "Play audio"} className="mini-player__play" onClick={togglePlayback} type="button">
-        {isPlaying ? <Pause fill="currentColor" size={16} /> : <Play fill="currentColor" size={16} />}
-      </button>
-      <div className="mini-player__details">
-        <strong>{activeRelease.title}</strong>
-        <span>{formatTime(currentTime)} / {formatTime(duration)}</span>
-      </div>
-      <input
-        aria-label="Seek in audio"
-        className="mini-player__progress"
-        max={duration}
-        min="0"
-        onChange={(event) => {
-          if (audioRef.current) {
-            audioRef.current.currentTime = Number(event.target.value);
-            setCurrentTime(Number(event.target.value));
-          }
-        }}
-        type="range"
-        value={currentTime}
-      />
-      <button
-        aria-label="Hide audio player"
-        className="mini-player__close"
-        onClick={() => {
-          audioRef.current?.pause();
-          setIsPlaying(false);
-          notifyStatus(false);
-          setIsVisible(false);
-        }}
-        type="button"
-      >
-        <X size={15} />
-      </button>
-    </div>
+
+      {isVisible && (
+        <div className="mini-player" aria-label="Creator Studio audio player">
+          <span className="mini-player__tag">{activeRelease.label ?? "studio sketch"}</span>
+          <button
+            aria-label={isPlaying ? "Pause audio" : "Play audio"}
+            className="mini-player__play"
+            onClick={togglePlayback}
+            type="button"
+          >
+            {isPlaying ? <Pause fill="currentColor" size={16} /> : <Play fill="currentColor" size={16} />}
+          </button>
+          <div className="mini-player__details">
+            <strong>{activeRelease.title}</strong>
+            <span>
+              {formatTime(currentTime)} / {formatTime(duration)}
+            </span>
+          </div>
+          <input
+            aria-label="Seek in audio"
+            className="mini-player__progress"
+            max={duration}
+            min="0"
+            onChange={(event) => {
+              if (audioRef.current) {
+                audioRef.current.currentTime = Number(event.target.value);
+                setCurrentTime(Number(event.target.value));
+              }
+            }}
+            type="range"
+            value={currentTime}
+          />
+          <button
+            aria-label="Hide audio player"
+            className="mini-player__close"
+            onClick={() => {
+              audioRef.current?.pause();
+              setIsPlaying(false);
+              notifyStatus(false);
+              setIsVisible(false);
+            }}
+            type="button"
+          >
+            <X size={15} />
+          </button>
+        </div>
+      )}
+    </>
   );
 }

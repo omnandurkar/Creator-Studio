@@ -16219,3 +16219,104 @@
   }
 }
 
+
+/* ═══════════════════════════════════════════════════════
+   CLEAN HOME HERO FOR MOBILE (<= 768px ONLY)
+   (Laptop/Desktop view stays 100% untouched)
+═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .studio-hero {
+    min-height: auto !important;
+    padding: 2.25rem 1.25rem 2.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+
+  .studio-hero__content {
+    max-width: 100% !important;
+    padding-top: 0 !important;
+    position: relative !important;
+    z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .studio-hero__catalogue {
+    margin-bottom: 0.75rem !important;
+    justify-content: center !important;
+  }
+
+  .studio-hero h1 {
+    font-size: clamp(2.6rem, 10vw, 3.5rem) !important;
+    line-height: 1.05 !important;
+    margin-bottom: 0.85rem !important;
+    max-width: 100% !important;
+  }
+
+  .studio-hero h1 em {
+    display: block !important;
+    font-size: 1.15rem !important;
+    margin: 0.5rem 0 0 0 !important;
+    max-width: 100% !important;
+    line-height: 1.35 !important;
+  }
+
+  .studio-hero__line {
+    font-size: 0.92rem !important;
+    max-width: 90% !important;
+    margin: 0 auto 1.5rem !important;
+  }
+
+  .studio-hero__actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    gap: 0.75rem !important;
+  }
+
+  .hero-listen,
+  .hero-note-link {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Clean artwork collage on mobile: centered, no overlapping offscreen elements */
+  .studio-hero__art {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    margin-top: 1.75rem !important;
+    width: 100% !important;
+    max-width: 270px !important;
+    height: auto !important;
+    transform: none !important;
+    z-index: 1 !important;
+  }
+
+  .studio-hero__artwork {
+    width: 100% !important;
+    height: 270px !important;
+    border-radius: 20px !important;
+    transform: none !important;
+  }
+
+  /* Hide mobile clutter (floating orbits, dots, background noise, wave, corner note) */
+  .hero-orbit,
+  .hero-dots,
+  .hero-art-caption,
+  .studio-hero__wave,
+  .studio-hero__corner-note,
+  .hero-collage__scribble,
+  .hero-collage__sun,
+  .hero-collage__paper--blue,
+  .hero-collage__paper--cream,
+  .hero-record-label {
+    display: none !important;
+  }
+}
+
