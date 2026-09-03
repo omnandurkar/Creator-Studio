@@ -10,7 +10,7 @@ import SiteHeader from "./SiteHeader";
 
 type SiteShellProps = {
   children: ReactNode;
-  pageTheme: "studio" | "music" | "shayari" | "writings" | "notes" | "cinephile" | "about" | "contact" | "garden" | "books" | "book-deep-night" | "library";
+  pageTheme: "studio" | "music" | "shayari" | "writings" | "notes" | "cinephile" | "about" | "contact" | "garden" | "books" | "book-deep-night" | "library" | "recs" | "blog";
 };
 
 export default function SiteShell({ children, pageTheme }: SiteShellProps) {

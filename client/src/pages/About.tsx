@@ -3,11 +3,11 @@
  * pistachio and cream cut-paper layers, real portrait photo, and a human
  * scale that introduces Om and the philosophy behind Creator Studio.
  */
-import { ArrowUpRight, CircleDot, HeartHandshake, Sparkles, Star, UserRound } from "lucide-react";
+import { ArrowUpRight, CircleDot, Globe, HeartHandshake, Instagram, Linkedin, Mail, Sparkles, Star, UserRound, Youtube } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import SiteShell from "@/components/SiteShell";
-import { publishedHobbies, studioProfile } from "@/lib/content";
+import { contactDetails, publishedHobbies, studioProfile } from "@/lib/content";
 
 export default function About() {
   const [isArchiveNoteOpen, setIsArchiveNoteOpen] = useState(false);
@@ -32,15 +32,25 @@ export default function About() {
               <strong>“…Last night.”</strong>
               <small>— Tony Stark, The Avengers (2012)</small>
             </div>
-            <a className="about-hero__jump" href="#about-story">
-              a little more about the work <ArrowUpRight size={16} />
-            </a>
+            <div className="about-hero__actions-col">
+              <a className="about-hero__jump" href="#about-story">
+                a little more about the work <ArrowUpRight size={16} />
+              </a>
+              <div className="about-hero__social-pills" aria-label="Om's social profiles">
+                <a href={contactDetails.portfolio} target="_blank" rel="noreferrer" title="Main Portfolio (omnandurkar.space)"><Globe size={15} /></a>
+                {contactDetails.linkedin && <a href={contactDetails.linkedin} target="_blank" rel="noreferrer" title="LinkedIn (om-nandurkar17)"><Linkedin size={15} /></a>}
+                {contactDetails.youtube && <a href={contactDetails.youtube} target="_blank" rel="noreferrer" title="YouTube Channel (@omnandurkarmusicals)"><Youtube size={15} /></a>}
+                {contactDetails.instagramMusic && <a href={contactDetails.instagramMusic} target="_blank" rel="noreferrer" title="Music Instagram (@sur.aur.silsile)"><Instagram size={15} /></a>}
+                {contactDetails.instagramPersonal && <a href={contactDetails.instagramPersonal} target="_blank" rel="noreferrer" title="Personal Instagram (@the_omnandurkar)"><Instagram size={15} /></a>}
+                <a href={`mailto:${contactDetails.email}`} title="Send Email"><Mail size={15} /></a>
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="about-hero__portrait-slot" aria-label="Om's portrait image">
           <div className="portrait-slot__frame portrait-slot__frame--real">
-            <img alt="Om Nandurkar" className="portrait-slot__img" src={studioProfile.portraitImage || "/assets/om-cozy-portrait.jpg"} />
+            <img alt="Om Nandurkar" className="portrait-slot__img" src="/assets/om-mountain-portrait.jpg" />
             <div className="portrait-slot__overlay-label">Om Nandurkar</div>
           </div>
           <div className="portrait-slot__sun" />

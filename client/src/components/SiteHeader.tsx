@@ -12,6 +12,7 @@ const sections = [
   { label: "Library", href: "/library", isReady: true },
   { label: "Notes", href: "/notes", isReady: true },
   { label: "Cinephile", href: "/cinephile", isReady: true },
+  { label: "Recs", href: "/recs", isReady: true },
   { label: "ADHD Garden", href: "/adhd-garden", isReady: true },
   { label: "About", href: "/about", isReady: true },
 ];

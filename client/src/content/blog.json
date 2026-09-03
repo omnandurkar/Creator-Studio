@@ -1,0 +1,142 @@
+[
+  {
+    "id": "blog-001",
+    "slug": "why-i-wake-up-at-4am",
+    "title": "Why I Keep Waking Up at 4 AM",
+    "date": "2026-09-03",
+    "excerpt": "It's not the alarm. It's a sentence that feels too urgent to survive until morning.",
+    "body": [
+      "It's not the alarm. It's a sentence. Or a chord. Or the sudden, embarrassing clarity that the chorus I wrote last Tuesday is wrong — not bad, wrong.",
+      "The desk at 4 AM is a different place than it is at noon. There's no performing at 4 AM. Nobody's watching. You can write something terrible and just leave it there without judgment.",
+      "I think the real reason is simpler than that: during the day, I'm Om Nandurkar. At 4 AM, I'm just the person trying to finish the thing."
+    ],
+    "tags": ["late-night", "creative-process", "honesty"],
+    "mood": "reflective",
+    "published": true,
+    "featured": true
+  },
+  {
+    "id": "blog-002",
+    "slug": "on-physics-and-music",
+    "title": "On Physics and Music Being the Same Thing",
+    "date": "2026-08-28",
+    "excerpt": "A wave is a wave whether it's light, sound, or water. I think about this too much.",
+    "body": [
+      "A wave is a wave whether it's light, sound, or water. The math doesn't care what medium you're in.",
+      "I started thinking about this while working on the bridge for a new track. I was playing with reverb — the way sound bounces and decays — and I realized I was essentially solving a boundary value problem. The room is the boundary. The note is the solution.",
+      "Fourier showed us that any complex signal can be decomposed into simple sine waves. A chord is just a superposition. A melody is just a time series. And yet — it makes someone cry in a café.",
+      "I don't know what that means. I think it means everything."
+    ],
+    "tags": ["physics", "music", "thinking-out-loud"],
+    "mood": "curious",
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "blog-003",
+    "slug": "the-problem-with-being-interested-in-everything",
+    "title": "The Problem With Being Interested in Everything",
+    "date": "2026-08-22",
+    "excerpt": "Everyone says 'find your niche.' Nobody tells you what to do when your niche is everything.",
+    "body": [
+      "Everyone says 'find your niche.' Nobody tells you what to do when your niche is everything.",
+      "In the same week I can be deep in Riemannian geometry, writing a Hindi love song, watching Villeneuve films, and reading about Kishore Kumar's yodeling technique. These are not separate interests. They feel like the same interest wearing different clothes.",
+      "The common thread, I think, is: what does beauty look like in this domain? What's the Arrival of mathematics? What's the Feynman of music?",
+      "I used to feel embarrassed about this. Like I was scattered, unfocused, uncommitted. Now I think scatter might be the strategy."
+    ],
+    "tags": ["multi-passionate", "identity", "adhd-adjacent"],
+    "mood": "honest",
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "blog-004",
+    "slug": "the-geometry-of-silence",
+    "title": "The Geometry of Silence in Film Editing",
+    "date": "2026-08-18",
+    "excerpt": "What Denis Villeneuve taught me about leaving space for the audience to breathe.",
+    "body": [
+      "Silence is not empty audio; it is a weight. When Villeneuve cuts away from the sandstorm in Dune, the silence isn't a void—it's a heavy velvet blanket.",
+      "In music production, we talk about negative space. If every frequency is filled, the mix collapses. The same holds true for visual storytelling. The best cut is often the frame you decided not to trim."
+    ],
+    "tags": ["cinema", "editing", "sound-design"],
+    "mood": "excited",
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "blog-005",
+    "slug": "notes-on-fourier-transforms",
+    "title": "Notes on Fourier Transforms & Coffee Stains",
+    "date": "2026-08-15",
+    "excerpt": "Deconstructing signals over black coffee at 3 AM in Bombay.",
+    "body": [
+      "I spilled dark roast across my calculus notebook last night right over the integral of e^(-i*2pi*f*t). The ink bloomed like a frequency spectrum.",
+      "There's something deeply comforting about knowing that any messy, chaotic real-world waveform can be broken down into clean, pristine sines and cosines."
+    ],
+    "tags": ["math", "coffee", "physics"],
+    "mood": "reflective",
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "blog-006",
+    "slug": "why-old-synth-knobs-feel-better",
+    "title": "Why Analog Knobs Feel Better Than Glass Screens",
+    "date": "2026-08-12",
+    "excerpt": "Haptic feedback, resistance, and the tactile joy of physical instruments.",
+    "body": [
+      "Turning a heavy aluminum potentiometer on a vintage Moog gives your brain instant physical feedback. Glass touchscreens flatline your sense of touch.",
+      "When designing web interfaces, we try to recreate that physical resistance with risograph drop shadows, tactile button offsets, and paper textures."
+    ],
+    "tags": ["design", "analog", "haptics"],
+    "mood": "curious",
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "blog-007",
+    "slug": "the-art-of-unfinished-projects",
+    "title": "In Praise of the Unfinished Project",
+    "date": "2026-08-08",
+    "excerpt": "Not every draft needs to be a masterwork. Some exist just to teach you a lesson.",
+    "body": [
+      "My hard drive has 40 half-written song demos and 12 unreleased research outlines. I used to view them as failures. Now I view them as scaffolding.",
+      "The project that got abandoned at 60% completion gave you the breakthrough you needed to finish the project that succeeded."
+    ],
+    "tags": ["creative-process", "mindset"],
+    "mood": "honest",
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "blog-008",
+    "slug": "marine-drive-at-midnight",
+    "title": "Marine Drive at Midnight: A Composition Log",
+    "date": "2026-08-04",
+    "excerpt": "Listening to the Arabian Sea crash against tetrapods while humming a melody.",
+    "body": [
+      "The sea wall at 1 AM has its own rhythmic pulse. The waves crash in approximately 7.2-second cycles, which happens to be a perfect tempo for ambient drone music.",
+      "I recorded the ambient ocean noise on my phone and built a warm synth pad underneath it. The city never truly sleeps; it just changes pitch."
+    ],
+    "tags": ["mumbai", "soundscapes", "music"],
+    "mood": "melancholic",
+    "published": true,
+    "featured": false
+  },
+  {
+    "id": "blog-009",
+    "slug": "welcome-to-the-desk-journal",
+    "title": "Inaugurating Om's Public Desk Journal",
+    "date": "2026-08-01",
+    "excerpt": "The first entry in this open tab notebook. Welcome to the workspace.",
+    "body": [
+      "This is entry zero. A public open notebook for thoughts, reflections, and epiphanies that don't fit neatly into portfolio showcases.",
+      "If you're reading this, welcome to the desk. Pull up a chair."
+    ],
+    "tags": ["journal", "welcome", "beginning"],
+    "mood": "excited",
+    "published": true,
+    "featured": false
+  }
+]

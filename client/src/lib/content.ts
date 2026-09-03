@@ -21,6 +21,8 @@ import connections from "@/content/connections.json";
 import press from "@/content/press.json";
 import books from "@/content/books.json";
 import research from "@/content/research.json";
+import recommendations from "@/content/recommendations.json";
+import blog from "@/content/blog.json";
 
 export type StudioProfile = { artistName: string; fullName: string; shortTagline: string; aboutIntro: string; aboutNote: string; signatureLine: string; currentlyCreating: string; availability: string; portraitImage?: string };
 export const studioProfile = site as StudioProfile;
@@ -107,7 +109,7 @@ export const publishedFilms = (films as FilmNote[]).filter((entry) => entry.publ
 export function findFilm(slug: string) { return publishedFilms.find((entry) => entry.slug === slug); }
 
 export type Hobby = { id: string; title: string; description: string; icon: string; color: "peach" | "butter" | "sky"; published: boolean; isTemplate?: boolean; route?: string };
-export type ContactDetails = { email: string; bookingEmail: string; instagram: string; portfolio: string; youtube: string; spotify: string; availability: string; collaborationTypes: string[] };
+export type ContactDetails = { email: string; bookingEmail: string; instagram: string; instagramMusic?: string; instagramPersonal?: string; portfolio: string; youtube: string; spotify: string; linkedin?: string; easterEggJoke?: string; availability: string; collaborationTypes: string[] };
 export const publishedHobbies = (hobbies as Hobby[]).filter((entry) => entry.published);
 export const contactDetails = contact as ContactDetails;
 export type WatchlistItem = { id: string; title: string; format: string; reason: string; published: boolean; isTemplate?: boolean };
@@ -141,3 +143,46 @@ export const allLibraryItems: LibraryItem[] = [
   ...publishedResearch.map((r) => ({ ...r, kind: "research" as const })),
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
+export type RecommendationPick = {
+  id: string;
+  title: string;
+  creator: string;
+  year: string;
+  type: "film" | "show" | "youtube" | "place" | "café" | "artist" | "album" | "book" | "site" | "tool" | string;
+  why: string;
+  link: string;
+  image: string;
+  tag: string;
+  published: boolean;
+  featured: boolean;
+};
+
+export type RecommendationCategory = {
+  id: string;
+  category: string;
+  slug: string;
+  emoji: string;
+  color: "teal" | "coral" | "butter" | "peach" | "sky" | "lilac" | string;
+  kicker: string;
+  description: string;
+  picks: RecommendationPick[];
+  published: boolean;
+};
+
+export const publishedRecs = (recommendations as RecommendationCategory[]).filter((cat) => cat.published);
+
+export type BlogEntry = {
+  id: string;
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  body: string[];
+  tags: string[];
+  mood: string;
+  published: boolean;
+  featured: boolean;
+};
+
+export const publishedBlogEntries = (blog as BlogEntry[]).filter((entry) => entry.published).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+export function findBlogEntry(slug: string) { return publishedBlogEntries.find((entry) => entry.slug === slug); }

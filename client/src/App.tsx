@@ -33,6 +33,9 @@ import ArchiveArtifacts from "./pages/ArchiveArtifacts";
 import ArchiveConnections from "./pages/ArchiveConnections";
 import PressKit from "./pages/PressKit";
 import AdhdGarden from "./pages/AdhdGarden";
+import Recs from "./pages/Recs";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -78,6 +81,9 @@ function Router() {
         <Route path="/mind-garden" component={AdhdGarden} />
         <Route path="/adhd-garden" component={AdhdGarden} />
         <Route path="/adhd" component={AdhdGarden} />
+        <Route path="/recs" component={Recs} />
+        <Route path="/blog/:slug" component={BlogPost} />
+        <Route path="/blog" component={Blog} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

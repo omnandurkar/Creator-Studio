@@ -1,10 +1,14 @@
 {
   "email": "nandurkarom172@gmail.com",
   "bookingEmail": "",
-  "instagram": "https://instagram.com/the_omnandurkar",
+  "instagram": "https://www.instagram.com/sur.aur.silsile/",
+  "instagramMusic": "https://www.instagram.com/sur.aur.silsile/",
+  "instagramPersonal": "https://instagram.com/the_omnandurkar",
   "portfolio": "https://www.omnandurkar.space",
-  "youtube": "",
+  "youtube": "https://www.youtube.com/@omnandurkarmusicals",
+  "linkedin": "https://in.linkedin.com/in/om-nandurkar17",
   "spotify": "",
   "availability": "Open to selected collaborations",
-  "collaborationTypes": ["songwriting", "vocals", "live sessions", "creative conversations"]
+  "collaborationTypes": ["songwriting", "vocals", "live sessions", "creative conversations"],
+  "easterEggJoke": "Crafting YouTube videos and Instagram posts past 3 AM for a loyal, silent audience of 14 people. 🤫"
 }
