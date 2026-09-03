@@ -20,7 +20,7 @@ export default function MiniPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(60);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [activeRelease, setActiveRelease] = useState<ReleasePlayDetail>({ id: "studio-sketch-01", title: demoTitle, source: demoSource, label: "studio sketch 01" });
 
   const notifyStatus = (playing: boolean, release = activeRelease) => {
