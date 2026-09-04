@@ -175,26 +175,121 @@ export default function Home() {
       </section>
 
       {/* ── Research & Papers Spotlight ── */}
-      <section className="home-research-spotlight">
-        <div className="home-research-spotlight__heading">
-          <p className="section-kicker"><Atom size={14} /> mathematical &amp; physical research</p>
-          <h2>Peer-Reviewed Papers &amp;<br /><em>Metaphysical Mechanics.</em></h2>
-          <p>Rigorous mathematical physics modeling of non-Euclidean space and thermodynamic anomalies in anime systems.</p>
+      <section className="home-research-spotlight" aria-labelledby="research-section-title">
+
+        {/* Journal masthead */}
+        <div className="hrs-journal-header">
+          <div className="hrs-journal-header__left">
+            <span className="hrs-journal-badge"><Atom size={11} /> Mathematical &amp; Physical Research</span>
+            <p className="hrs-journal-name">Journal of Metaphysical Mechanics</p>
+          </div>
+          <div className="hrs-journal-header__right">
+            <span className="hrs-journal-meta">Vol. 1, 2024</span>
+            <span className="hrs-journal-meta">ISSN 2024-OM01</span>
+          </div>
         </div>
+
+        {/* Rule + title block */}
+        <div className="hrs-title-block">
+          <div className="hrs-title-block__rule" aria-hidden="true" />
+
+          {/* Atom / orbit vector decoration */}
+          <svg aria-hidden="true" className="hrs-atom-art" viewBox="0 0 180 180" fill="none">
+            <ellipse cx="90" cy="90" rx="78" ry="30" stroke="currentColor" strokeWidth="1.2" strokeDasharray="4 5" />
+            <ellipse cx="90" cy="90" rx="78" ry="30" stroke="currentColor" strokeWidth="1.2" strokeDasharray="4 5"
+              transform="rotate(60 90 90)" />
+            <ellipse cx="90" cy="90" rx="78" ry="30" stroke="currentColor" strokeWidth="1.2" strokeDasharray="4 5"
+              transform="rotate(120 90 90)" />
+            <circle cx="90" cy="90" r="9" fill="currentColor" opacity="0.18" />
+            <circle cx="90" cy="90" r="5" fill="currentColor" opacity="0.5" />
+            <circle cx="168" cy="90" r="4" fill="currentColor" opacity="0.55" />
+            <circle cx="12" cy="90" r="3" fill="currentColor" opacity="0.35" />
+          </svg>
+
+          {/* Floating math glyphs */}
+          <div className="hrs-math-glyphs" aria-hidden="true">
+            <span>∇</span><span>∞</span><span>∂</span><span>∮</span><span>Σ</span><span>Δ</span>
+          </div>
+
+          <h2 id="research-section-title" className="hrs-title-block__heading">
+            Peer-Reviewed Papers &amp;
+            <br />
+            <em>Metaphysical Mechanics.</em>
+          </h2>
+          <p className="hrs-title-block__abstract">
+            Rigorous math-physics papers modelling non-Euclidean spatial distortions and 
+            thermodynamic anomalies — written with real differential geometry frameworks.
+          </p>
+          <div className="hrs-title-block__meta-row">
+            <span>Om Mahendranandurkar</span>
+            <span className="hrs-sep">·</span>
+            <span>Dept. of Speculative Physics</span>
+            <span className="hrs-sep">·</span>
+            <span>2 papers</span>
+          </div>
+        </div>
+
+        {/* Paper cards */}
         <div className="home-research-grid">
+
           <Link className="home-research-card" href="/research/mathematical-physics-gojo-limitless">
-            <span className="home-research-tag">Paper 01 · Differential Geometry</span>
-            <h3>Riemannian Metric Tensor Field Distortions in Gojo's Limitless</h3>
-            <p>Formulating Infinity, Red, Blue, and Hollow Purple through Einstein Field Equations and Cauchy-Schwarz metric convergence.</p>
-            <span className="home-research-link">Read Full Paper <ArrowUpRight size={15} /></span>
+            <div className="hrc-top">
+              <span className="hrc-number">Paper № 01</span>
+              <span className="hrc-field">Differential Geometry</span>
+            </div>
+            {/* Short crisp title */}
+            <h3 className="hrc-title">Gojo's Limitless &amp; Metric Tensor Distortions</h3>
+            <div className="hrc-keywords" aria-label="Keywords">
+              <span>Einstein Field Eq.</span>
+              <span>Cauchy-Schwarz</span>
+              <span>Non-Euclidean</span>
+            </div>
+            <p className="hrc-abstract-label">Abstract —</p>
+            <p className="hrc-abstract">Infinity, Red, Blue, and Hollow Purple modelled through Einstein Field Equations and Cauchy-Schwarz metric convergence.</p>
+            <div className="hrc-footer">
+              <span className="hrc-doi">DOI: 10.1234/jmm.2024.gojo</span>
+              <span className="home-research-link">Read Paper <ArrowUpRight size={14} /></span>
+            </div>
           </Link>
+
           <Link className="home-research-card" href="/research/toji-fushiguro-heavenly-restriction">
-            <span className="home-research-tag">Paper 02 · Biomechanics</span>
-            <h3>Biomechanical &amp; Thermodynamic Analysis of Toji Fushiguro</h3>
-            <p>A zero-cursed energy thermodynamic null state, absolute sensory resolution, and tactical anti-domain mechanics.</p>
-            <span className="home-research-link">Read Full Paper <ArrowUpRight size={15} /></span>
+            <div className="hrc-top">
+              <span className="hrc-number">Paper № 02</span>
+              <span className="hrc-field">Biomechanics</span>
+            </div>
+            {/* Short crisp title */}
+            <h3 className="hrc-title">Toji Fushiguro's Heavenly Restriction — A Null-State Analysis</h3>
+            <div className="hrc-keywords" aria-label="Keywords">
+              <span>Zero-Energy State</span>
+              <span>Thermodynamics</span>
+              <span>Anti-Domain</span>
+            </div>
+            <p className="hrc-abstract-label">Abstract —</p>
+            <p className="hrc-abstract">Zero-cursed energy thermodynamic null state, peak sensory resolution, and tactical anti-domain mechanics under physical constraint.</p>
+            <div className="hrc-footer">
+              <span className="hrc-doi">DOI: 10.1234/jmm.2024.toji</span>
+              <span className="home-research-link">Read Paper <ArrowUpRight size={14} /></span>
+            </div>
           </Link>
+
         </div>
+
+        {/* Corner vector — wave formula line */}
+        <svg aria-hidden="true" className="hrs-wave-art" viewBox="0 0 340 38" fill="none">
+          <path d="M0 19 C20 5, 40 33, 60 19 S100 5, 120 19 S160 33, 180 19 S220 5, 240 19 S280 33, 300 19 S330 10, 340 19"
+            stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          <text x="4" y="35" fontSize="7" fontFamily="monospace" fill="currentColor" opacity="0.45">E = mc²</text>
+          <text x="140" y="35" fontSize="7" fontFamily="monospace" fill="currentColor" opacity="0.45">G_μν = 8πT_μν</text>
+          <text x="268" y="35" fontSize="7" fontFamily="monospace" fill="currentColor" opacity="0.45">∇²φ = 0</text>
+        </svg>
+
+        {/* Bottom footnote rule */}
+        <div className="hrs-footnote">
+          <span className="hrs-footnote__line" aria-hidden="true" />
+          <p>¹ All papers use real mathematical frameworks applied to fictional systems for academic exploration.</p>
+          <Link href="/library" className="hrs-footnote__link">Browse full library <ExternalLink size={12} /></Link>
+        </div>
+
       </section>
 
       <section className="studio-note-section">
