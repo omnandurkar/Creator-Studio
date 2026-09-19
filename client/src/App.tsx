@@ -21,6 +21,7 @@ import BookDetail from "./pages/BookDetail";
 import ResearchDetail from "./pages/ResearchDetail";
 import GojoLimitlessResearch from "./pages/research/GojoLimitlessResearch";
 import TojiHeavenlyRestrictionResearch from "./pages/research/TojiHeavenlyRestrictionResearch";
+import VarginhaUfoResearch from "./pages/research/VarginhaUfoResearch";
 import Cinephile from "./pages/Cinephile";
 import FilmDetail from "./pages/FilmDetail";
 import About from "./pages/About";
@@ -60,6 +61,8 @@ function DynamicPageTitle() {
       title = "Tere Ishq Mein · Single · Om Nandurkar";
     } else if (path.startsWith("/music")) {
       title = "Music & Discography · Om Nandurkar";
+    } else if (path === "/research/varginha-ufo-phenomenon-analysis") {
+      title = "Brazil's Roswell: Deconstructing the Varginha Alien Myth · Sociological Research";
     } else if (path === "/research/mathematical-physics-gojo-limitless") {
       title = "Paper №01: Gojo's Limitless & Metric Tensor Distortions · Metaphysical Mechanics";
     } else if (path === "/research/toji-fushiguro-heavenly-restriction") {
@@ -119,6 +122,7 @@ function Router() {
         <Route path="/library" component={Library} />
         <Route path="/books/:slug" component={BookDetail} />
         <Route path="/books" component={Library} />
+        <Route path="/research/varginha-ufo-phenomenon-analysis" component={VarginhaUfoResearch} />
         <Route path="/research/mathematical-physics-gojo-limitless" component={GojoLimitlessResearch} />
         <Route path="/research/toji-fushiguro-heavenly-restriction" component={TojiHeavenlyRestrictionResearch} />
         <Route path="/research/:slug" component={ResearchDetail} />

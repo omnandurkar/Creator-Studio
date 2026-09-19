@@ -128,13 +128,13 @@ export type PressKit = { creator: string; role: string; archiveName: string; sho
 export const pressKit = press as PressKit;
 
 export type Book = {
-  id: string; slug: string; title: string; status: string; category: string; date: string; excerpt: string; pdfUrl: string; tags: string[]; published: boolean; featured: boolean;
+  id: string; slug: string; title: string; status: string; category: string; date: string; excerpt: string; pdfUrl: string; coverImage?: string; tags: string[]; published: boolean; featured: boolean;
 };
 export const publishedBooks = (books as Book[]).filter((entry) => entry.published);
 export function findBook(slug: string) { return publishedBooks.find((entry) => entry.slug === slug); }
 
 export type ResearchPaper = {
-  id: string; slug: string; title: string; authors: string[]; abstract: string; field: string; conference?: string; date: string; pdfUrl: string; externalUrl: string; tags: string[]; published: boolean; featured: boolean;
+  id: string; slug: string; title: string; authors: string[]; abstract: string; field: string; conference?: string; date: string; pdfUrl: string; externalUrl: string; tags: string[]; published: boolean; featured: boolean; sections?: { heading: string; paragraphs: string[] }[];
 };
 export const publishedResearch = (research as ResearchPaper[]).filter((entry) => entry.published);
 export function findResearch(slug: string) { return publishedResearch.find((entry) => entry.slug === slug); }

@@ -44,6 +44,23 @@ export default function ResearchDetail() {
             <p className="research-detail__abstract-text">{paper.abstract}</p>
           </div>
 
+          {paper.sections && paper.sections.length > 0 && (
+            <div className="research-detail__sections">
+              {paper.sections.map((section, idx) => (
+                <div key={idx} className="research-detail__panel glass-panel delay-1" style={{ marginTop: "2rem" }}>
+                  <h2 style={{ fontSize: "1.4rem", color: "#3a4a8f", marginBottom: "1rem" }}>
+                    {section.heading}
+                  </h2>
+                  {section.paragraphs.map((p, pIdx) => (
+                    <p key={pIdx} className="research-detail__abstract-text" style={{ marginBottom: "1rem" }}>
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
+
           <div className="research-detail__tags-panel glass-panel delay-2">
             <h3><Tag size={18} /> Keywords</h3>
             <div className="research-detail__tag-list">

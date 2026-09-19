@@ -225,20 +225,38 @@ export default function Home() {
             <span className="hrs-sep">·</span>
             <span>Dept. of Speculative Physics</span>
             <span className="hrs-sep">·</span>
-            <span>2 papers</span>
+            <span>3 papers</span>
           </div>
         </div>
 
         {/* Paper cards */}
         <div className="home-research-grid">
 
-          <Link className="home-research-card" href="/research/mathematical-physics-gojo-limitless">
+          <Link className="home-research-card" href="/research/varginha-ufo-phenomenon-analysis">
             <div className="hrc-top">
               <span className="hrc-number">Paper № 01</span>
+              <span className="hrc-field">Sociology &amp; UFOlogy</span>
+            </div>
+            <h3 className="hrc-title">Brazil's Roswell: Deconstructing the Varginha Alien Myth</h3>
+            <div className="hrc-keywords" aria-label="Keywords">
+              <span>Mass Hysteria</span>
+              <span>Sepsis Pathology</span>
+              <span>Urban Folklore</span>
+            </div>
+            <p className="hrc-abstract-label">Abstract —</p>
+            <p className="hrc-abstract">An exhaustive sociological, medical, and historical analysis of Brazil's 1996 Varginha UFO incident, dissecting panic contagion, medical logs, and dark tourism.</p>
+            <div className="hrc-footer">
+              <span className="hrc-doi">DOI: 10.1234/jmm.2026.varginha</span>
+              <span className="home-research-link">Read Paper <ArrowUpRight size={14} /></span>
+            </div>
+          </Link>
+
+          <Link className="home-research-card" href="/research/mathematical-physics-gojo-limitless">
+            <div className="hrc-top">
+              <span className="hrc-number">Paper № 02</span>
               <span className="hrc-field">Differential Geometry</span>
             </div>
-            {/* Short crisp title */}
-            <h3 className="hrc-title">Gojo's Limitless &amp; Metric Tensor Distortions</h3>
+            <h3 className="hrc-title">Bending Spacetime: The Physics of Gojo's Limitless</h3>
             <div className="hrc-keywords" aria-label="Keywords">
               <span>Einstein Field Eq.</span>
               <span>Cauchy-Schwarz</span>
@@ -254,11 +272,10 @@ export default function Home() {
 
           <Link className="home-research-card" href="/research/toji-fushiguro-heavenly-restriction">
             <div className="hrc-top">
-              <span className="hrc-number">Paper № 02</span>
+              <span className="hrc-number">Paper № 03</span>
               <span className="hrc-field">Biomechanics</span>
             </div>
-            {/* Short crisp title */}
-            <h3 className="hrc-title">Toji Fushiguro's Heavenly Restriction — A Null-State Analysis</h3>
+            <h3 className="hrc-title">Absolute Zero: Toji Fushiguro's Null-State Physics</h3>
             <div className="hrc-keywords" aria-label="Keywords">
               <span>Zero-Energy State</span>
               <span>Thermodynamics</span>

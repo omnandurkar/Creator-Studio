@@ -2,7 +2,7 @@
   {
     "id": "research-001",
     "slug": "mathematical-physics-gojo-limitless",
-    "title": "Gojo's Infinity Physics Analysis",
+    "title": "Bending Spacetime: The Physics of Gojo's Limitless",
     "authors": [
       "Om M Nandurkar"
     ],
@@ -26,7 +26,7 @@
   {
     "id": "research-004",
     "slug": "toji-fushiguro-heavenly-restriction",
-    "title": "Toji Fushiguro Heavenly Restriction Analysis",
+    "title": "Absolute Zero: Toji Fushiguro's Null-State Physics",
     "authors": [
       "Om M Nandurkar"
     ],
@@ -48,9 +48,71 @@
     "featured": true
   },
   {
+    "id": "research-005",
+    "slug": "varginha-ufo-phenomenon-analysis",
+    "title": "Brazil's Roswell: Deconstructing the Varginha Alien Myth",
+    "authors": [
+      "Om M Nandurkar"
+    ],
+    "abstract": "An exhaustive sociological, medical, and historical analysis of Brazil's most prominent 1996 UFO incident in Varginha. By dissecting civilian testimonies, military blockades, medical pathology logs of Officer Marco Chereze's bacterial sepsis, and municipal dark tourism branding, this paper establishes how localized panic and media contagion synthesized an enduring interstellar myth.",
+    "field": "Sociology & UFOlogy",
+    "conference": "Sociological Research",
+    "date": "2026-09-19",
+    "pdfUrl": "",
+    "externalUrl": "https://docs.google.com/document/d/1X3SQ76d6Ku9TBGsFlqTqYqZC8Kh1zcQT6VHVjN3Nejw/edit?usp=sharing",
+    "tags": [
+      "Varginha-UFO",
+      "sociology",
+      "mass-hysteria",
+      "medical-pathology",
+      "urban-folklore",
+      "dark-tourism"
+    ],
+    "published": true,
+    "featured": true,
+    "sections": [
+      {
+        "heading": "1. Introduction & Socio-Political Context",
+        "paragraphs": [
+          "In January 1996, the coffee-producing city of Varginha in Minas Gerais, Brazil became the focal point of an explosive narrative involving alleged UFO crashes, extraterrestrial retrievals, and unexplained military operations. Occurring in a post-dictatorship socio-political era, localized military logistics coincided with civilian panic, culturally priming the public to suspect clandestine state cover-ups."
+        ]
+      },
+      {
+        "heading": "2. Precursor Anomalies & The Aerospace Narrative",
+        "paragraphs": [
+          "Claims of NORAD radar alerts and a highway crash reported by civilian pilot Carlos de Souza were investigated. Physical sweeps by 14 ufologists yielded zero debris, impact craters, or chemical scorch marks, while local residents confirmed no unusual military activity. Decades later, de Souza appended telepathic alien encounters to his original testimony, highlighting narrative contamination in UFO media circuits."
+        ]
+      },
+      {
+        "heading": "3. The Jardim Andere Sighting: Misidentification Under Panic",
+        "paragraphs": [
+          "On January 20, 1996, three teenagers encountered an unsteady, mud-covered figure near a wall, describing brown oily skin and luminescent red eyes. Distressed, they reported seeing 'the devil'. Ufologists later shifted the girls' religious framework to an extraterrestrial paradigm, substituting local Catholic folklore with globalized alien mythology."
+        ]
+      },
+      {
+        "heading": "4. Official Military Investigation (IPM 18/1997)",
+        "paragraphs": [
+          "The 357-page official investigation (IPM 18/1997) revealed that the girls had encountered Luiz Antônio de Paula ('Mudinho'), a mentally disabled unhoused resident known for crouching near walls. Hospital blockades were traced to bulk cardiac equipment deliveries and a legal cadaver exhumation, while fire department movements responded to a severe hailstorm."
+        ]
+      },
+      {
+        "heading": "5. Pathology of Officer Marco Eli Chereze",
+        "paragraphs": [
+          "The death of 23-year-old military police officer Marco Eli Chereze was heavily weaponized by ufologists claiming alien contagion. Medical pathology reports established that Chereze died of hyper-aggressive bacterial sepsis (toxic granulations and severe leukocytosis) following a minor axillary cyst removal, not an interstellar pathogen."
+        ]
+      },
+      {
+        "heading": "6. Zoo Fatalities & Urban Tourism Economy",
+        "paragraphs": [
+          "Clustered animal deaths at the Varginha zoo were confirmed by necropsies as industrial caustic chemical poisoning rather than alien bio-weapons. Today, Varginha has capitalized on the mythos through 20-meter saucer water towers, ET plaza monuments, and dark tourism merchandising, turning collective hysteria into a thriving municipal brand."
+        ]
+      }
+    ]
+  },
+  {
     "id": "research-002",
     "slug": "generative-models-creative-content",
-    "title": "Generative Models for Creative Content",
+    "title": "Silicon & Soul: Generative AI in Art & Sound",
     "authors": [
       "Om M Nandurkar"
     ],
@@ -72,7 +134,7 @@
   {
     "id": "research-003",
     "slug": "sentiment-analysis-hinglish",
-    "title": "Sentiment Analysis in Hinglish Text",
+    "title": "Decoding Hinglish: Sentiment Analysis in Code-Mixed Text",
     "authors": [
       "Om M Nandurkar"
     ],

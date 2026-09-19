@@ -57,6 +57,15 @@ export default function BookDetail() {
         </header>
 
         <main>
+          {book.coverImage && (
+            <div className="book-detail__cover-showcase scroll-fade">
+              <div className="book-detail__cover-3d">
+                <img src={book.coverImage} alt={`${book.title} Cover`} />
+                <div className="book-detail__cover-spine-effect" />
+              </div>
+            </div>
+          )}
+
           <div className="glass-panel delay-1">
             <h2 style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '2rem', fontFamily: 'Playfair Display, serif', marginBottom: '2rem' }}>
               <BookOpen size={28} /> The Story

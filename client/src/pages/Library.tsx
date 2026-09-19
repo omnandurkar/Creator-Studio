@@ -17,7 +17,7 @@ function BookCard({ entry, index }: { entry: Book; index: number }) {
 
   return (
     <Link
-      className={`writing-card ${isAvailable ? "writing-card--blue" : "writing-card--sage"}`}
+      className={`writing-card ${isAvailable ? "writing-card--blue" : "writing-card--sage"} ${entry.coverImage ? "writing-card--has-cover" : ""}`}
       href={isAvailable ? `/library/${entry.slug}` : "#"}
       style={{ opacity: isAvailable ? 1 : 0.7, pointerEvents: isAvailable ? 'auto' : 'none' }}
     >
@@ -26,8 +26,25 @@ function BookCard({ entry, index }: { entry: Book; index: number }) {
         <span>{entry.category}</span>
         <span>{isAvailable ? formatDate(entry.date) : "Coming Soon"}</span>
       </div>
-      <h2>{entry.title}</h2>
-      <p>{entry.excerpt}</p>
+
+      {entry.coverImage ? (
+        <div className="book-card__content-with-cover">
+          <div className="book-card__cover-thumb">
+            <img src={entry.coverImage} alt={`${entry.title} cover`} />
+            <div className="book-card__cover-spine" />
+          </div>
+          <div className="book-card__text-details">
+            <h2>{entry.title}</h2>
+            <p>{entry.excerpt}</p>
+          </div>
+        </div>
+      ) : (
+        <>
+          <h2>{entry.title}</h2>
+          <p>{entry.excerpt}</p>
+        </>
+      )}
+
       <div className="writing-card__footer">
         <span>{entry.tags.length > 0 ? entry.tags.slice(0, 2).join(" / ") : "Pending"}</span>
         {isAvailable && <ArrowUpRight size={17} />}
