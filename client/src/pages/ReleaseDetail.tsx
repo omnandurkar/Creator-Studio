@@ -6,12 +6,20 @@ import { ArrowLeft, ArrowUpRight, Clock3, ExternalLink, FileMusic, ListMusic, Mu
 import { useEffect, useState } from "react";
 import { Link, useParams } from "wouter";
 import SiteShell from "@/components/SiteShell";
-import { findRelease, findSongById, publishedReleases, type Song } from "@/lib/content";
+import ScheduledReleaseModal from "@/components/ScheduledReleaseModal";
+import { findRelease, findSongById, publishedReleases, contactDetails, type Song } from "@/lib/content";
+
+function getSpotifyEmbedUrl(url?: string): string | null {
+  if (!url) return null;
+  const match = url.match(/track\/([a-zA-Z0-9]+)/);
+  return match?.[1] ? `https://open.spotify.com/embed/track/${match[1]}?utm_source=generator` : null;
+}
 
 export default function ReleaseDetail() {
   const { slug } = useParams<{ slug: string }>();
   const release = findRelease(slug);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [scheduledTrack, setScheduledTrack] = useState<string | null>(null);
 
   useEffect(() => {
     if (!release) return;
@@ -40,6 +48,8 @@ export default function ReleaseDetail() {
   }
 
   const releaseLinks = Object.entries(release.links ?? {});
+  const spotifyTrackUrl = release.links?.spotify;
+  const spotifyEmbedUrl = getSpotifyEmbedUrl(spotifyTrackUrl);
   const tracks = "trackIds" in release ? (release.trackIds ?? []).map((trackId) => findSongById(trackId)).filter((track): track is Song => Boolean(track)) : [];
   const audioPreview = "audioPreview" in release ? release.audioPreview : undefined;
   const relatedReleases = (release.relatedIds ?? []).map((id) => publishedReleases.find((item) => item.id === id)).filter((item): item is NonNullable<typeof item> => Boolean(item));
@@ -54,7 +64,7 @@ export default function ReleaseDetail() {
   };
 
   return (
-    <SiteShell pageTheme="music">
+    <SiteShell pageTheme="music" customBg={release.pastelBg}>
       <section className="release-detail">
         <Link className="release-detail__back" href="/music"><ArrowLeft size={16} /> back to the blue room</Link>
         <div className="release-detail__grid">
@@ -74,6 +84,24 @@ export default function ReleaseDetail() {
             <p className="release-detail__meta">{release.type} · {new Date(release.releaseDate).getFullYear()}</p>
             <p className="release-detail__description">{release.description}</p>
             {"mood" in release && release.mood && <div className="release-detail__moods">{release.mood.map((mood) => <span key={mood}>{mood}</span>)}</div>}
+            
+            {/* Direct Spotify Player Embed */}
+            {spotifyEmbedUrl && (
+              <div style={{ marginTop: "18px", marginBottom: "18px", borderRadius: "12px", overflow: "hidden", boxShadow: "0 8px 24px rgba(0,0,0,0.08)" }}>
+                <iframe
+                  src={spotifyEmbedUrl}
+                  width="100%"
+                  height="152"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  title={`${release.title} on Spotify`}
+                  style={{ borderRadius: "12px", border: "none" }}
+                />
+              </div>
+            )}
+
             {audioPreview && (
               <button className="release-detail__preview release-detail__preview--ready" onClick={() => playRelease()} type="button">
                 {isPlaying ? (
@@ -87,11 +115,30 @@ export default function ReleaseDetail() {
                 )}
               </button>
             )}
-            {!audioPreview && <p className="release-detail__unavailable"><Clock3 size={16} /> This preview is still kept in the margins.</p>}
-            {releaseLinks.length > 0 && <div className="release-detail__links">{releaseLinks.map(([platform, url]) => <a href={url} key={platform} rel="noreferrer" target="_blank">{platform}<ExternalLink size={14} /></a>)}</div>}
+            {!audioPreview && !spotifyEmbedUrl && <p className="release-detail__unavailable"><Clock3 size={16} /> This preview is still kept in the margins.</p>}
+            
+            <div className="release-detail__links">
+              {releaseLinks.map(([platform, url]) => (
+                <a href={url} key={platform} rel="noreferrer" target="_blank">
+                  {platform}<ExternalLink size={14} />
+                </a>
+              ))}
+              {contactDetails.spotify && (
+                <a href={contactDetails.spotify} key="spotify-artist-profile" rel="noreferrer" target="_blank" title="Spotify Artist Profile">
+                  artist profile<ExternalLink size={14} />
+                </a>
+              )}
+            </div>
           </div>
         </div>
-        {tracks.length > 0 && <section className="release-detail__tracks"><div><p className="section-kicker"><ListMusic size={14} /> foldout track list</p><h2>Three rooms,<br /><em>one spine.</em></h2></div><ol>{tracks.map((track, index) => <li key={track.id}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{track.title}</strong><small>{track.duration} · {track.mood?.[0]}</small></div>{track.audioPreview ? <button onClick={() => window.dispatchEvent(new CustomEvent("creator-studio:play-release", { detail: { id: track.id, title: track.title, source: track.audioPreview, label: "album track" } }))} type="button"><Play fill="currentColor" size={14} /> play</button> : <Link href={`/music/${track.slug}`}>open <ArrowUpRight size={14} /></Link>}</li>)}</ol></section>}
+        {tracks.length > 0 && <section className="release-detail__tracks"><div><p className="section-kicker"><ListMusic size={14} /> foldout track list</p><h2>Four rooms,<br /><em>one spine.</em></h2></div><ol>{tracks.map((track, index) => <li key={track.id}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{track.title}</strong><small>{track.duration} · {track.mood?.[0]}</small></div>{track.audioPreview ? <button onClick={() => window.dispatchEvent(new CustomEvent("creator-studio:play-release", { detail: { id: track.id, title: track.title, source: track.audioPreview, label: "album track" } }))} type="button"><Play fill="currentColor" size={14} /> play</button> : <button onClick={() => setScheduledTrack(track.title)} style={{ background: "#20252f", color: "#ffffff", border: "none", padding: "0.4rem 0.8rem", borderRadius: "6px", fontSize: "0.75rem", fontWeight: "700", display: "inline-flex", alignItems: "center", gap: "0.3rem", cursor: "pointer" }} type="button">open <ArrowUpRight size={14} /></button>}</li>)}</ol></section>}
+        
+        <ScheduledReleaseModal
+          isOpen={Boolean(scheduledTrack)}
+          onClose={() => setScheduledTrack(null)}
+          trackTitle={scheduledTrack ?? ""}
+          albumTitle={release?.title}
+        />
         {release.lyricFragments && release.lyricFragments.length > 0 && <section className="release-detail__lyrics"><p className="section-kicker"><Quote size={14} /> lyrics in the margin</p><div>{release.lyricFragments.map((fragment) => <blockquote key={fragment}>{fragment}</blockquote>)}</div><p>{release.lyricContext}</p></section>}
         {release.story && <section className="release-detail__story"><details><summary><ScrollText size={19} /><span><small>where this came from</small><strong>Open the story drawer</strong></span><Sparkles size={18} /></summary><div><p>{release.story}</p>{release.storyPlace && <span>filed from: {release.storyPlace}</span>}</div></details></section>}
         {release.versions && release.versions.length > 0 && <section className="release-detail__versions"><p className="section-kicker"><FileMusic size={14} /> versions cabinet</p><h2>Every piece keeps<br /><em>its earlier selves.</em></h2><div>{release.versions.map((version, index) => <article key={version.id}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{version.label}</strong><p>{version.description}</p></div>{version.audioPreview ? <button onClick={() => playRelease(version.audioPreview, version.label)} type="button"><Play fill="currentColor" size={14} /> listen</button> : <small>space held</small>}</article>)}</div></section>}

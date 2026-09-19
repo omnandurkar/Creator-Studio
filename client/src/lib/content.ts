@@ -46,6 +46,8 @@ type EnrichedReleaseFields = {
   versions?: ReleaseVersion[];
   timeline?: ReleaseTimelineMoment[];
   relatedIds?: string[];
+  pastelBg?: string;
+  accentColor?: string;
 };
 
 export type Song = EnrichedReleaseFields & {
@@ -83,7 +85,7 @@ export const publishedSongs = (songs as Song[]).filter((song) => song.published)
 export const publishedAlbums = (albums as Album[]).filter((album) => album.published);
 export const publishedReleases = [...publishedAlbums, ...publishedSongs].sort((a, b) => new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime());
 export function findRelease(slug: string) { return publishedReleases.find((release) => release.slug === slug); }
-export function findSongById(id: string) { return publishedSongs.find((song) => song.id === id); }
+export function findSongById(id: string) { return (songs as Song[]).find((song) => song.id === id); }
 
 export type Shayari = {
   id: string; slug: string; title: string; text: string; romanizedText?: string; translation?: string; hiddenLine?: string; language: string; series?: string; seriesOrder?: number; shareable?: boolean; readingTrackId?: string; tags: string[]; date: string; published: boolean; featured: boolean; isIllustrative?: boolean;

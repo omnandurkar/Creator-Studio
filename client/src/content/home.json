@@ -1,18 +1,18 @@
 {
   "featuredRelease": {
-    "kicker": "Featured Release · Acoustic Single",
-    "title": "Tere Ishq Mein",
-    "format": "Single / Acoustic Ballad · 2026",
-    "description": "An intimate Hindi-English ballad about quiet devotion and lingering memory, built around raw acoustic guitar, room tone, and warm tape saturation.",
-    "coverImage": ""
+    "kicker": "New Release · Out Now on Spotify",
+    "title": "First Drop",
+    "format": "Single / Acoustic Sunset Ballad · 2026",
+    "description": "Om Nandurkar's latest single 'First Drop'—an intimate acoustic reflection on rain, sunset light, and quiet warmth. Stream directly on Spotify.",
+    "coverImage": "/assets/Music/Originals/First-Drop/First-Drop.jpg"
   },
   "previewSong": {
-    "title": "Tere Ishq Mein",
-    "duration": "03:42",
-    "status": "Single · Available now in listening room"
+    "title": "First Drop",
+    "duration": "03:30",
+    "status": "Single · Out now on Spotify"
   },
   "featuredNote": {
-    "text": "Tum ho toh sab hai — some lines don't need a heavy arrangement, just an acoustic guitar and a quiet room.",
-    "label": "Juhu Beach scrap · kept close"
+    "text": "Same skies, new feelings — some moments capture the gentle quiet before the rain begins.",
+    "label": "Sunset Window scrap · First Drop"
   }
 }

@@ -3,7 +3,7 @@
  * room—soft black, butter and coral, star fields, credit-roll typography, and a
  * pure-frontend collaboration form with direct social links.
  */
-import { ArrowLeft, ArrowUpRight, Globe, Instagram, Linkedin, Mail, Send, Sparkles, Youtube } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Globe, Instagram, Linkedin, Mail, Music2, Send, Sparkles, Youtube } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { Link } from "wouter";
 import SiteShell from "@/components/SiteShell";
@@ -16,6 +16,7 @@ export default function Contact() {
 
   const contactLinks = [
     { label: "Main Portfolio (omnandurkar.space)", value: contactDetails.portfolio, icon: Globe },
+    { label: "Spotify Artist Profile", value: contactDetails.spotify, icon: Music2 },
     { label: "LinkedIn (om-nandurkar17)", value: contactDetails.linkedin, icon: Linkedin },
     { label: "YouTube Channel (@omnandurkarmusicals)", value: contactDetails.youtube, icon: Youtube },
     { label: "Music Instagram (@sur.aur.silsile)", value: contactDetails.instagramMusic || contactDetails.instagram, icon: Instagram },

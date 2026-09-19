@@ -1,5 +1,140 @@
 [
   {
+    "id": "routine-001",
+    "slug": "routine",
+    "title": "Routine",
+    "type": "single",
+    "releaseDate": "2026-10-15",
+    "coverImage": "/assets/Music/Originals/Daftar/Daftar-poster.jpg",
+    "duration": "03:15",
+    "description": "Track 01 of DAFTAR — Morning 9 AM chai, opening unread emails, and setting up the desk for the workday.",
+    "mood": ["routine", "morning", "office-life"],
+    "links": {},
+    "lyricFragments": ["Ghar se daftar, daftar se ghar / Ek hi dhun mein guzare din bhr"],
+    "lyricContext": "The acoustic opening track setting the scene for a 9-to-5 workday.",
+    "story": "Written while holding a hot cup of tea at the desk before the morning standup.",
+    "storyPlace": "Office Desk / 9:00 AM",
+    "credits": [{ "role": "vocals, lyrics, composition", "name": "Om Nandurkar" }],
+    "versions": [],
+    "timeline": [{ "date": "Coming Soon", "title": "releasing with DAFTAR EP", "detail": "Track 01" }],
+    "relatedIds": ["daftar-001"],
+    "published": false,
+    "featured": false
+  },
+  {
+    "id": "office-mein-ishq-001",
+    "slug": "office-mein-ishq",
+    "title": "Office Mein Ishq",
+    "type": "single",
+    "releaseDate": "2026-10-15",
+    "coverImage": "/assets/Music/Originals/Daftar/Daftar-poster.jpg",
+    "duration": "03:45",
+    "description": "Track 02 of DAFTAR — Stolen glances across cubicles, shared coffee machine laughs, and silent office romance.",
+    "mood": ["romantic", "playful", "pop"],
+    "links": {},
+    "lyricFragments": ["Printer ki aawaz ke peeche / Main tera naam sunta hoon"],
+    "lyricContext": "A catchy, warm pop track about how love sneaks into mundane office routines.",
+    "story": "Inspired by watching how people's faces light up when a specific coworker walks into the room.",
+    "storyPlace": "Coffee Machine / 2:30 PM",
+    "credits": [{ "role": "vocals, lyrics, composition", "name": "Om Nandurkar" }],
+    "versions": [],
+    "timeline": [{ "date": "Coming Soon", "title": "releasing with DAFTAR EP", "detail": "Track 02" }],
+    "relatedIds": ["daftar-001"],
+    "published": false,
+    "featured": false
+  },
+  {
+    "id": "daftar-ka-dhua-001",
+    "slug": "daftar-ka-dhua",
+    "title": "Daftar Ka Dhua",
+    "type": "single",
+    "releaseDate": "2026-10-15",
+    "coverImage": "/assets/Music/Originals/Daftar/Daftar-poster.jpg",
+    "duration": "03:40",
+    "description": "Track 03 of DAFTAR — Late evening overtime, tea break vent sessions, and city skyline reflections.",
+    "mood": ["late-night", "melancholy", "indie"],
+    "links": {},
+    "lyricFragments": ["Daftar ka dhua, shaam ki chai / Thoda sa dard, thodi si aashai"],
+    "lyricContext": "An atmospheric indie track built on ambient guitar and late-night city tones.",
+    "story": "Written during a 7 PM terrace break looking over the illuminated skyline.",
+    "storyPlace": "Office Terrace / 7:00 PM",
+    "credits": [{ "role": "vocals, lyrics, composition", "name": "Om Nandurkar" }],
+    "versions": [],
+    "timeline": [{ "date": "Coming Soon", "title": "releasing with DAFTAR EP", "detail": "Track 03" }],
+    "relatedIds": ["daftar-001"],
+    "published": false,
+    "featured": false
+  },
+  {
+    "id": "local-ki-thakan-001",
+    "slug": "local-ki-thakan",
+    "title": "Local Ki Thakan",
+    "type": "single",
+    "releaseDate": "2026-10-15",
+    "coverImage": "/assets/Music/Originals/Daftar/Daftar-poster.jpg",
+    "duration": "03:40",
+    "description": "Track 04 of DAFTAR — Standing by the local train door at night, watching Mumbai blur past as work fatigue melts away.",
+    "mood": ["commute", "comfort", "acoustic"],
+    "links": {},
+    "lyricFragments": ["Local ki thakan mein bhi ek sukoon hai / Tu ghar pe mera intezaar karti hai"],
+    "lyricContext": "The gentle acoustic finale bringing the workday home.",
+    "story": "Composed on the fast local train from Churchgate back to home station.",
+    "storyPlace": "Mumbai Local Train / 9:30 PM",
+    "credits": [{ "role": "vocals, lyrics, composition", "name": "Om Nandurkar" }],
+    "versions": [],
+    "timeline": [{ "date": "Coming Soon", "title": "releasing with DAFTAR EP", "detail": "Track 04" }],
+    "relatedIds": ["daftar-001"],
+    "published": false,
+    "featured": false
+  },
+  {
+    "id": "first-drop-001",
+    "slug": "first-drop",
+    "title": "First Drop",
+    "type": "single",
+    "releaseDate": "2026-09-19",
+    "coverImage": "/assets/Music/Originals/First-Drop/First-Drop.jpg",
+    "duration": "03:30",
+    "description": "Om Nandurkar's new single 'First Drop'—an acoustic sunset reflection on rain, new feelings, and quiet warmth. Out now on Spotify.",
+    "mood": [
+      "acoustic",
+      "romantic",
+      "sunset",
+      "rain"
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/track/6T8IXTkCwlRviShMvRFCTJ?si=5b89dbdf49ca4df9"
+    },
+    "lyricFragments": [
+      "Same Skies / New Feelings",
+      "First Drop — Om Nandurkar"
+    ],
+    "lyricContext": "A song born from watching rain glaze the balcony glass while golden evening light fills the quiet room.",
+    "story": "Written on a rain-kissed evening with an acoustic guitar sitting beside the bed, looking out over the city skyline at sunset. 'First Drop' captures the fragile, magical moment when feelings begin to take form—like the very first raindrop hitting the window.",
+    "storyPlace": "Studio Window / Evening Rain",
+    "credits": [
+      {
+        "role": "vocals, lyrics, composition, production",
+        "name": "Om Nandurkar"
+      }
+    ],
+    "versions": [],
+    "timeline": [
+      {
+        "date": "September 19",
+        "title": "single released",
+        "detail": "'First Drop' released on Spotify and added to the Creator Studio archive."
+      }
+    ],
+    "relatedIds": [
+      "tere-ishq-mein-001"
+    ],
+    "published": true,
+    "featured": true,
+    "pastelBg": "#fdf0e6",
+    "accentColor": "#e67347"
+  },
+  {
     "id": "tere-ishq-mein-001",
     "slug": "tere-ishq-mein",
     "title": "Tere Ishq Mein",
@@ -38,7 +173,9 @@
     ],
     "relatedIds": [],
     "published": true,
-    "featured": true
+    "featured": true,
+    "pastelBg": "#fcf0f2",
+    "accentColor": "#c44c66"
   },
   {
     "id": "song-layout-001",

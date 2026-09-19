@@ -6,6 +6,7 @@ import { ArrowUpRight, Calendar, Globe, History, Instagram, Linkedin, Mail, Musi
 import { Link } from "wouter";
 import { toast } from "sonner";
 import StudioMark from "./StudioMark";
+import AccessibilityPanel from "./AccessibilityPanel";
 import { contactDetails } from "@/lib/content";
 
 export default function SiteFooter() {
@@ -123,14 +124,26 @@ export default function SiteFooter() {
           </a>
 
           {/* Music / Spotify */}
-          <button
-            aria-label="Spotify &amp; Streaming profiles (Catalogued for later)"
-            onClick={() => linkUnavailable("Spotify & Streaming profiles")}
-            title="Spotify &amp; Streaming profiles (Catalogued for later)"
-            type="button"
-          >
-            <Music2 size={16} />
-          </button>
+          {contactDetails.spotify ? (
+            <a
+              href={contactDetails.spotify}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Spotify Artist Profile"
+              title="Om Nandurkar on Spotify"
+            >
+              <Music2 size={16} />
+            </a>
+          ) : (
+            <button
+              aria-label="Spotify &amp; Streaming profiles (Catalogued for later)"
+              onClick={() => linkUnavailable("Spotify & Streaming profiles")}
+              title="Spotify &amp; Streaming profiles (Catalogued for later)"
+              type="button"
+            >
+              <Music2 size={16} />
+            </button>
+          )}
 
           {/* LinkedIn */}
           {contactDetails.linkedin && (
@@ -181,9 +194,12 @@ export default function SiteFooter() {
           )}
         </div>
 
-        <button className="footer-build-note footer-easter-egg-btn" onClick={showEasterEgg} type="button" title="Click to reveal secret archive note">
-          <Sparkles size={13} /> living creator studio archive
-        </button>
+        <div className="footer-bottom-tools">
+          <AccessibilityPanel />
+          <button className="footer-build-note footer-easter-egg-btn" onClick={showEasterEgg} type="button" title="Click to reveal secret archive note">
+            <Sparkles size={13} /> living creator studio archive
+          </button>
+        </div>
       </div>
     </footer>
   );

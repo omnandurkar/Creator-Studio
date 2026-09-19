@@ -15,7 +15,6 @@ import {
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import StudioMark from "./StudioMark";
-import AccessibilityPanel from "./AccessibilityPanel";
 
 /* ─── Animated SVG: Quill pen for the "Ink" trigger ─── */
 function QuillSVG() {
@@ -486,7 +485,6 @@ export default function SiteHeader() {
           <Link aria-label="Search the archive" className="header-search" href="/search">
             <Search size={17} />
           </Link>
-          <AccessibilityPanel />
         </div>
 
         <Link

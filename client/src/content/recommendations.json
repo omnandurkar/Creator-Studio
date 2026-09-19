@@ -253,6 +253,19 @@
     "description": "Albums, artists, and tracks that I loop without noticing. These are my reference points.",
     "picks": [
       {
+        "id": "pick-rehbara",
+        "title": "Rehbara",
+        "creator": "Abhijeet Srivastava & Shayra Apoorva",
+        "year": "2026",
+        "type": "track",
+        "why": "Trending everywhere right now for good reason. Soft acoustic picking, lush vocal harmonies, and poetry that hits like a rain-kissed evening breeze. Currently in heavy rotation during late studio sessions.",
+        "link": "https://open.spotify.com/search/Rehbara",
+        "image": "",
+        "tag": "trending",
+        "published": true,
+        "featured": true
+      },
+      {
         "id": "pick-arijit-singh",
         "title": "Arijit Singh",
         "creator": "Arijit Singh",

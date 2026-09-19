@@ -1,5 +1,31 @@
 [
   {
+    "id": "daftar-001",
+    "slug": "daftar",
+    "title": "DAFTAR",
+    "type": "album",
+    "releaseDate": "2026-10-15",
+    "coverImage": "/assets/Music/Originals/Daftar/Daftar-poster.jpg",
+    "duration": "14:20",
+    "description": "FOUR SONGS. ONE WORKDAY. Om Nandurkar's upcoming concept album capturing office life, corporate chaos, stolen coffee breaks, and evening local train fatigue.",
+    "mood": ["office-life", "city-chaos", "acoustic-pop", "relatable"],
+    "links": {},
+    "trackIds": ["routine-001", "office-mein-ishq-001", "daftar-ka-dhua-001", "local-ki-thakan-001"],
+    "story": "Written during late office hours and daily local train commutes across Mumbai. 'DAFTAR' tells the story of a single 9-to-5 workday—from morning desk setups and stolen printer glances, to terrace tea breaks, evening burnout, and the quiet relief of heading home.",
+    "storyPlace": "Office Desk & Mumbai Local Train",
+    "credits": [{ "role": "composition, lyrics, vocals, production", "name": "Om Nandurkar" }],
+    "timeline": [
+      { "date": "September 2026", "title": "album announcement & hype", "detail": "Official artwork revealed and interactive pre-save launched in Creator Studio." },
+      { "date": "Coming Soon", "title": "four tracks dropping", "detail": "Full EP releasing across all music streaming platforms." }
+    ],
+    "relatedIds": ["first-drop-001", "tere-ishq-mein-001"],
+    "published": true,
+    "featured": true,
+    "isUpcoming": true,
+    "pastelBg": "#edf7f6",
+    "accentColor": "#2d7a78"
+  },
+  {
     "id": "album-layout-001",
     "slug": "blue-room-notes",
     "title": "Blue Room Notes",

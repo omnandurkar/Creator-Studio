@@ -47,10 +47,66 @@ function ScrollToTop() {
   return null;
 }
 
+function DynamicPageTitle() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    let title = "Creator Studio";
+    const path = location.split("?")[0];
+
+    if (path === "/") {
+      title = "Creator Studio";
+    } else if (path.startsWith("/music/tere-ishq-mein")) {
+      title = "Tere Ishq Mein · Single · Om Nandurkar";
+    } else if (path.startsWith("/music")) {
+      title = "Music & Discography · Om Nandurkar";
+    } else if (path === "/research/mathematical-physics-gojo-limitless") {
+      title = "Paper №01: Gojo's Limitless & Metric Tensor Distortions · Metaphysical Mechanics";
+    } else if (path === "/research/toji-fushiguro-heavenly-restriction") {
+      title = "Paper №02: Toji's Heavenly Restriction Null-State · Metaphysical Mechanics";
+    } else if (path.startsWith("/research")) {
+      title = "Metaphysical Mechanics · Research Papers · Om Nandurkar";
+    } else if (path === "/recs") {
+      title = "Om's Shelf & Rec Room · Om Nandurkar";
+    } else if (path.startsWith("/blog")) {
+      title = "Om's Daily Dispatches & Essays · Studio Blog";
+    } else if (path === "/adhd-garden" || path === "/mind-garden" || path === "/adhd") {
+      title = "ADHD Living Archive & Mind Garden · Om Nandurkar";
+    } else if (path.startsWith("/library") || path.startsWith("/books")) {
+      title = "Library & Reading Shelf · Om Nandurkar";
+    } else if (path.startsWith("/writings")) {
+      title = "Writings & Prose · Om Nandurkar";
+    } else if (path.startsWith("/shayari")) {
+      title = "Shayari & Verse · Om Nandurkar";
+    } else if (path.startsWith("/cinephile")) {
+      title = "Cinephile & Film Shelf · Om Nandurkar";
+    } else if (path === "/about") {
+      title = "About Om Nandurkar · Dept. of Speculative Physics";
+    } else if (path === "/contact") {
+      title = "Say Hello · Contact · Om Nandurkar";
+    } else if (path === "/studio-desk") {
+      title = "Studio Desk · Om Nandurkar";
+    } else if (path === "/search") {
+      title = "Search Archive · Om Nandurkar";
+    } else if (path === "/press") {
+      title = "Press Kit · Om Nandurkar";
+    } else if (path === "/calendar") {
+      title = "Archive Calendar · Om Nandurkar";
+    } else if (path === "/changelog") {
+      title = "Archive Change Log · Om Nandurkar";
+    }
+
+    document.title = title;
+  }, [location]);
+
+  return null;
+}
+
 function Router() {
   return (
     <>
       <ScrollToTop />
+      <DynamicPageTitle />
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/music/:slug" component={ReleaseDetail} />

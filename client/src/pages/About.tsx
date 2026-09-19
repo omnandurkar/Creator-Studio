@@ -3,7 +3,7 @@
  * pistachio and cream cut-paper layers, real portrait photo, and a human
  * scale that introduces Om and the philosophy behind Creator Studio.
  */
-import { ArrowUpRight, CircleDot, Globe, HeartHandshake, Instagram, Linkedin, Mail, Sparkles, Star, UserRound, Youtube } from "lucide-react";
+import { ArrowUpRight, CircleDot, Globe, HeartHandshake, Instagram, Linkedin, Mail, Music2, Sparkles, Star, UserRound, Youtube } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import SiteShell from "@/components/SiteShell";
@@ -38,6 +38,7 @@ export default function About() {
               </a>
               <div className="about-hero__social-pills" aria-label="Om's social profiles">
                 <a href={contactDetails.portfolio} target="_blank" rel="noreferrer" title="Main Portfolio (omnandurkar.space)"><Globe size={15} /></a>
+                {contactDetails.spotify && <a href={contactDetails.spotify} target="_blank" rel="noreferrer" title="Spotify Artist Profile"><Music2 size={15} /></a>}
                 {contactDetails.linkedin && <a href={contactDetails.linkedin} target="_blank" rel="noreferrer" title="LinkedIn (om-nandurkar17)"><Linkedin size={15} /></a>}
                 {contactDetails.youtube && <a href={contactDetails.youtube} target="_blank" rel="noreferrer" title="YouTube Channel (@omnandurkarmusicals)"><Youtube size={15} /></a>}
                 {contactDetails.instagramMusic && <a href={contactDetails.instagramMusic} target="_blank" rel="noreferrer" title="Music Instagram (@sur.aur.silsile)"><Instagram size={15} /></a>}

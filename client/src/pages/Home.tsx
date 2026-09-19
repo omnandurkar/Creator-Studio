@@ -1,7 +1,8 @@
-import { ArrowDownRight, ArrowUpRight, Atom, BookOpen, CirclePlay, Disc3, ExternalLink, Film, Flower2, Headphones, MoveRight, Music2, Pause, Sparkles, StickyNote } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Atom, BookOpen, CirclePlay, Disc3, ExternalLink, Film, Flower2, Headphones, MoveRight, Music2, Newspaper, Pause, Sparkles, StickyNote } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import SiteShell from "@/components/SiteShell";
+import DaftarHypeBanner from "@/components/DaftarHypeBanner";
 import { homeContent, studioProfile } from "@/lib/content";
 import { toast } from "sonner";
 
@@ -16,9 +17,10 @@ const archiveRooms = [
   { no: "02", title: "Shayari", copy: "Devanagari lines & romantic poetry", href: "/shayari", className: "archive-card--shayari", icon: "☾" },
   { no: "03", title: "Writings", copy: "essays on sound, physics & code", href: "/writings", className: "archive-card--writings", icon: <BookOpen size={16} /> },
   { no: "04", title: "Library", copy: "Gojo & Toji mathematical papers", href: "/library", className: "archive-card--library", icon: <Atom size={16} /> },
-  { no: "05", title: "Notes", copy: "pinned scraps & lemon wall", href: "/notes", className: "archive-card--notes", icon: <StickyNote size={16} /> },
+  { no: "05", title: "Recs", copy: "handpicked media, books & tools", href: "/recs", className: "archive-card--recs", icon: <Sparkles size={16} /> },
   { no: "06", title: "Cinephile", copy: "Project Hail Mary & screening shelf", href: "/cinephile", className: "archive-card--cinephile", icon: <Film size={16} /> },
-  { no: "07", title: "ADHD Garden", copy: "constructive mind & interest petals", href: "/adhd-garden", className: "archive-card--adhd", icon: <Flower2 size={16} /> },
+  { no: "07", title: "Blog", copy: "dispatches, thoughts & stories", href: "/blog", className: "archive-card--blog", icon: <Newspaper size={16} /> },
+  { no: "08", title: "ADHD Garden", copy: "constructive mind & interest petals", href: "/adhd-garden", className: "archive-card--adhd", icon: <Flower2 size={16} /> },
 ];
 
 function SoundWave() {
@@ -62,23 +64,7 @@ export default function Home() {
   };
 
   const playFeaturedSong = () => {
-    if (isPlaying) {
-      window.dispatchEvent(new Event("creator-studio:toggle-play"));
-    } else {
-      window.dispatchEvent(
-        new CustomEvent("creator-studio:play-release", {
-          detail: {
-            id: "tere-ishq-mein-001",
-            title: "Tere Ishq Mein",
-            source: "/assets/Music/Originals/Tere-Ishq-Mein/Tere-Ishq-Mein.mp3",
-            label: "Single · Acoustic Ballad",
-          },
-        })
-      );
-      toast("Now playing: Tere Ishq Mein", {
-        description: "Acoustic Single · Listening Room",
-      });
-    }
+    window.location.href = "/music/first-drop";
   };
 
   return (
@@ -98,9 +84,20 @@ export default function Home() {
               <CirclePlay aria-hidden="true" size={18} strokeWidth={2.15} />
               Enter the music room
             </Link>
-            <Link className="hero-note-link" href="/writings">
-              Read something small <ArrowDownRight aria-hidden="true" size={18} />
-            </Link>
+            <button
+              type="button"
+              className="hero-note-link"
+              onClick={() => {
+                const target = document.querySelector(".now-playing-section");
+                if (target) {
+                  target.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  window.scrollTo({ top: window.innerHeight * 0.8, behavior: "smooth" });
+                }
+              }}
+            >
+              Explore the archive <ArrowDownRight aria-hidden="true" size={18} />
+            </button>
           </div>
         </div>
 
@@ -136,16 +133,19 @@ export default function Home() {
         <p className="studio-hero__corner-note">click the record label<br />for a fresh thought</p>
       </section>
 
+      {/* ── DAFTAR Album Hype Banner ── */}
+      <DaftarHypeBanner />
+
       <section className="now-playing-section" aria-labelledby="now-playing-title">
         <div className="now-playing-section__label-wrap">
           <p className="section-kicker"><span className="section-kicker__disc" /> latest from the studio</p>
-          <h2 id="now-playing-title">Featured Single:<br /><em>Tere Ishq Mein.</em></h2>
+          <h2 id="now-playing-title">Featured Single:<br /><em>First Drop.</em></h2>
         </div>
 
         <article className="release-feature">
           <div className="release-feature__art release-feature__art--vector">
             <div className={`release-vector__disc ${isPlaying ? "is-spinning" : ""}`}>
-              <img alt="Tere Ishq Mein song cover poster" className="release-disc__cover-img" src="/assets/Music/Originals/Tere-Ishq-Mein/Tere-Ishq-Mein-cover.jpg" />
+              <img alt="First Drop song cover poster" className="release-disc__cover-img" src="/assets/Music/Originals/First-Drop/First-Drop.jpg" />
               <div className="release-disc__center-hole" />
             </div>
             <div className="release-vector__tape" />
@@ -160,16 +160,16 @@ export default function Home() {
             <p className="release-feature__format">{homeContent.featuredRelease.format}</p>
             <p className="release-feature__description">{homeContent.featuredRelease.description}</p>
             <div className="release-feature__player">
-              <button aria-label={isPlaying ? "Pause Tere Ishq Mein" : "Play Tere Ishq Mein"} className="player-play" onClick={playFeaturedSong} type="button">
-                {isPlaying ? <Pause size={24} fill="currentColor" /> : <CirclePlay size={24} fill="currentColor" />}
-              </button>
+              <Link aria-label="Listen to First Drop on Spotify" className="player-play" href="/music/first-drop">
+                <CirclePlay size={24} fill="currentColor" />
+              </Link>
               <div className="player-track">
                 <span className="player-track__name">{homeContent.previewSong.title}</span>
                 <span>{homeContent.previewSong.duration}</span>
               </div>
               <div aria-hidden="true" className={`player-wave ${isPlaying ? "is-active" : ""}`}><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
             </div>
-            <Link className="release-feature__link" href="/music/tere-ishq-mein">open release page <ArrowUpRight aria-hidden="true" size={16} /></Link>
+            <Link className="release-feature__link" href="/music/first-drop">open release page <ArrowUpRight aria-hidden="true" size={16} /></Link>
           </div>
         </article>
       </section>
@@ -221,7 +221,7 @@ export default function Home() {
             thermodynamic anomalies — written with real differential geometry frameworks.
           </p>
           <div className="hrs-title-block__meta-row">
-            <span>Om Mahendranandurkar</span>
+            <span>Om Nandurkar</span>
             <span className="hrs-sep">·</span>
             <span>Dept. of Speculative Physics</span>
             <span className="hrs-sep">·</span>
@@ -290,6 +290,91 @@ export default function Home() {
           <Link href="/library" className="hrs-footnote__link">Browse full library <ExternalLink size={12} /></Link>
         </div>
 
+      </section>
+
+      {/* ── Rec Room & Blog Feature Spotlight ── */}
+      <section className="home-spotlight-promo" aria-labelledby="promo-spotlight-title">
+        <div className="hsp-inner">
+          <div className="hsp-header">
+            <p className="section-kicker"><Sparkles size={14} /> curated dispatches &amp; shelf recommendations</p>
+            <h2 id="promo-spotlight-title" className="hsp-heading">
+              Handpicked Recs &amp; <em>Studio Dispatches.</em>
+            </h2>
+            <p className="hsp-subhead">
+              Dive into curated media shelves, essential developer tools, and long-form essays on physics, sound, and software craft.
+            </p>
+          </div>
+
+          <div className="hsp-grid">
+            {/* Card 1: Rec Room Promo */}
+            <article className="hsp-card hsp-card--recs">
+              <div className="hsp-card__tape hsp-card__tape--recs" aria-hidden="true" />
+              <div className="hsp-card__vector hsp-card__vector--recs" aria-hidden="true">
+                <svg viewBox="0 0 200 200" fill="none" className="hsp-constellation">
+                  <circle cx="100" cy="100" r="70" stroke="currentColor" strokeWidth="1" strokeDasharray="3 5" opacity="0.35" />
+                  <circle cx="100" cy="100" r="45" stroke="currentColor" strokeWidth="1" strokeDasharray="2 4" opacity="0.45" />
+                  <path d="M100 20 L100 180 M20 100 L180 100" stroke="currentColor" strokeWidth="0.8" opacity="0.25" />
+                  <polygon points="100,60 108,92 140,100 108,108 100,140 92,108 60,100 92,92" fill="currentColor" opacity="0.35" />
+                </svg>
+                <div className="hsp-sparkle-burst">✦</div>
+              </div>
+
+              <div className="hsp-card__content">
+                <div className="hsp-card__badge hsp-card__badge--recs">
+                  <Sparkles size={12} /> Om’s Recommendations
+                </div>
+                <h3>Om’s Handpicked <em>Shelf.</em></h3>
+                <p>Films, sci-fi books, ambient vinyl, and developer stack favorites that shaped the studio.</p>
+                
+                <div className="hsp-card__tags">
+                  <span><Film size={11} /> Cinema</span>
+                  <span><BookOpen size={11} /> Sci-Fi Books</span>
+                  <span><Headphones size={11} /> Vinyl Albums</span>
+                  <span><Sparkles size={11} /> Dev Stack</span>
+                </div>
+
+                <Link href="/recs" className="hsp-btn hsp-btn--recs">
+                  Explore Om’s Shelf <ArrowUpRight size={16} />
+                </Link>
+              </div>
+            </article>
+
+            {/* Card 2: Blog Promo */}
+            <article className="hsp-card hsp-card--blog">
+              <div className="hsp-card__tape hsp-card__tape--blog" aria-hidden="true" />
+              <div className="hsp-card__vector hsp-card__vector--blog" aria-hidden="true">
+                <svg viewBox="0 0 220 180" fill="none" className="hsp-paper-stack">
+                  <rect x="25" y="20" width="150" height="130" rx="6" fill="currentColor" opacity="0.08" transform="rotate(-4 100 85)" />
+                  <rect x="35" y="25" width="150" height="130" rx="6" stroke="currentColor" strokeWidth="1.4" opacity="0.35" transform="rotate(3 100 85)" />
+                  <line x1="55" y1="55" x2="155" y2="55" stroke="currentColor" strokeWidth="1.5" opacity="0.45" />
+                  <line x1="55" y1="75" x2="140" y2="75" stroke="currentColor" strokeWidth="1.2" opacity="0.35" />
+                  <line x1="55" y1="95" x2="160" y2="95" stroke="currentColor" strokeWidth="1.2" opacity="0.35" />
+                  <line x1="55" y1="115" x2="120" y2="115" stroke="currentColor" strokeWidth="1.2" opacity="0.35" />
+                </svg>
+                <div className="hsp-ink-drop">🖋️</div>
+              </div>
+
+              <div className="hsp-card__content">
+                <div className="hsp-card__badge hsp-card__badge--blog">
+                  <Newspaper size={12} /> Om’s Studio Blog
+                </div>
+                <h3>Om’s Daily <em>Dispatches.</em></h3>
+                <p>Personal observations, math-physics notes, software craft, and acoustic dispatches from the desk.</p>
+                
+                <div className="hsp-card__tags">
+                  <span>Deep Dives</span>
+                  <span>Code Craft</span>
+                  <span>Physics Models</span>
+                  <span>Dispatches</span>
+                </div>
+
+                <Link href="/blog" className="hsp-btn hsp-btn--blog">
+                  Read Om’s Blog <ArrowUpRight size={16} />
+                </Link>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section className="studio-note-section">
